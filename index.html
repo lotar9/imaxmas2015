@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<title>XMas Imaweb 2015</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/main.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+		<script src="scripts/jquery.scrollify.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.scrollify({
+					section: '.panel',
+					offset: 0
+				});
+			});
+
+			function showAndPlay() {
+				$('div.video-popup').css('display', 'block');
+				$('div.video-popup').append('<iframe class="video-popup" src="https://www.youtube.com/embed/ZkJpzTNeaZQ?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+			}
+
+			function closeAndStop() {
+				$('div.video-popup').css('display', 'none');
+				$('iframe.video-popup').remove();
+			}
+		</script>
+	</head>
+	<body>
+		<section class="panel logo">
+			<div class="inner">
+				<p class="language">ES&nbsp;&nbsp;&nbsp;&nbsp;EN&nbsp;&nbsp;&nbsp;&nbsp;PT</p>
+				<h1>XMAS IMAWEB 2015</h1>
+				<p>Bienvenidos blablablbablalblabla</p>
+				<p class="about">From <a href='http://www.imaweb.net/' target='_blank' class='imaweb'>Imaweb</a> with ♥</p>
+			</div>
+		</section>
+		<section class="panel explanation">
+			<div class="inner">
+				<h2 class="about-game">Explicación</h2>
+				<div class='col-md-3 col-sm-2'>
+					<h4>Nivel 1</h4>
+					<p>Mueve con las flechas (izquierda o derecha) o pulsa en la pantalla táctil (izquierda o derecha) hacia donde quieras mover el carrito para coger los kilos de ayuda que llegan del cielo! Pero cuidado con las piedras, que no nos ayudaran!</p>
+				</div>
+				<div class='col-md-3 col-sm-2'>
+					<h4>Nivel 2</h4>
+					<p>Mueve la lancha con las flechas (arriba o abajo) o pulsa en la pantalla táctil (izquierda o derecha) para esquivar las piedras que aparezcan en pantalla... Y cuidado! Que si nos da una, tendremos que volver a empezar el viaje en barca!</p>
+				</div>
+				<div class='col-md-3 col-sm-2'>
+					<h4>Nivel 3</h4>
+					<p>Mueve el coche con las flechas (arriba o abajo) o pulsa en la pantalla táctil (izquierda o derecha) para esquivar los obstaculos y recoge gasolina para poder llevar los kilos de ayuda a la Playa de Xai-Xai... </p>
+				</div>
+				<div class='col-md-3 col-sm-2'>
+					<h4>Nivel 4</h4>
+					<p>Controla el helicóptero haciendo click o pulsando la barra espaciadora para poder repartir los kilos de ayuda en la Playa de Xai-Xai. Por el camino tendremos que tener cuidado de los arboles para que no nos choquemos con ellos!</p>
+				</div>
+			</div>
+		</section>
+		<section class="panel game">
+			<div class="game">
+				<!-- Contenido del videojuego -->
+			</div>
+		</section>
+		<section class="panel final">
+			<div class="inner">
+				<div class="middle">
+					<h2>GRACIAS POR PARTICIPAR! HAS RECOLECTADO <span class='punctuation'>0</span> KILOS DE AYUDA!</h2>
+					<p>Compartelo con tus conocidos!</p>
+					<p>
+						<a href='' class='twitter-intent'><img class='sn-logo' src='img/twitter.png' /></a>
+						<a href='' class='facebook-intent'><img class='sn-logo' src='img/facebook.png' /></a>
+						<a href='https://www.youtube.com/watch?v=ZkJpzTNeaZQ&amp;large=1' target='_blank' class='youtube-video'><img class='sn-logo' src='img/youtube.png' /></a>
+						<a href='messages.php' class='messages-panel'><img class='sn-logo' src='img/mail.png' /></a>
+					</p>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

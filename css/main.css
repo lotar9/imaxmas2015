@@ -1,0 +1,87 @@
+body {
+  font-family: 'Arimo', sans-serif;
+  color: #777777;
+}
+
+h1,h2 {
+  font-weight: bold;
+}
+
+h2.about-game {
+  margin-bottom: 50px;
+}
+
+section.panel {
+  position: relative;
+  border-bottom: 1px solid #666;
+  overflow-x: hidden;
+}
+
+section.logo {
+  /* Fondo: imagen navideña/imagen de la Playa de Xai-Xai */
+}
+
+section.explanation {
+  /* Fondo: foto de los cuatro niveles en una misma imagen */
+}
+
+section.final {
+  /* Fondo: a descartar por logo */
+}
+
+div.inner {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  display: table;
+  height: 100%;
+  background: transparent;
+}
+
+div.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 1024px){
+  div.inner {
+    width: 80%;
+  }
+}
+
+p.about {
+  position: absolute;
+  left: 40px;
+  bottom: 20px;
+}
+
+p.language {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+a.imaweb, a.imaweb:active {
+  text-decoration: none;
+  color: #999999;
+}
+
+a.imaweb:hover {
+  text-decoration: underline;
+}
+
+img.sn-logo {
+  width: 50px;
+  margin: 0 5px
+}
+
+a.facebook-intent img.sn-logo, a.messages-panel img.sn-logo {
+  width: 30px;
+}
+
+a.youtube-video img.sn-logo {
+  width: 35px;
+}
+.puntuaciones td{
+  width: 30%;
+}
