@@ -91,3 +91,10 @@ a.youtube-video img.sn-logo {
   left: auto;
   right: auto;
 }
+.video-frame {
+  width: 800px;
+  height: 450px;
+}
+.language span {
+cursor: pointer;
+}
