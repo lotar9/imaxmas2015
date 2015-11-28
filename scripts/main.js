@@ -19,3 +19,22 @@ function endGame(punctuation,language) {
 	$('span.punctuation').text(punctuation);
 	/* Mostrar popups */
 }
+
+function formSubmit(){
+	var formulario = document.getElementById("formulario");	
+	var nombre = formulario[0].value;
+	var mensaje = formulario[1].value;
+	 
+	if ( nombre.length > 0 && mesaje.length > 0 ){
+		formulario.submit();
+		return true;
+	} else {
+		alert("Por favor rellena los dos campos");
+		return false;
+	}
+}
+
+function changeLan (lan) {
+	console.log(lan);				
+}
+
