@@ -3,7 +3,21 @@ $(function(){
 		section: '.panel',
 		offset: 0
 	});
+	getLocation();
 });
+
+var latitude 	= null;
+var longitude	 = null;
+function getLocation(){
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(
+			function (position){
+				Latitude = position.coords.latitude;
+				Longitude = position.coords.longitude;
+			}
+		);
+	}
+}
 
 function showAndPlay() {
 	$('div.video-popup').css('display', 'block');
