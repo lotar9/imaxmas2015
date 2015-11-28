@@ -85,3 +85,9 @@ a.youtube-video img.sn-logo {
 .puntuaciones td{
   width: 30%;
 }
+.carousel-caption {
+  background-color: #000000;
+  position: relative;
+  left: auto;
+  right: auto;
+}
