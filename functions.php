@@ -2,10 +2,11 @@
 if ( $_POST['score'] ){
 	$conn = getConn();
 	if(!$conn->query( sprintf(
-			"insert into messages (location,help_amount,creation_date) values ('%s',%s,'%s')",
+			"insert into messages (location,help_amount,creation_date,province) values ('%s',%s,'%s','%s')",
 			getLocation(),
 			(int)$_POST['score'],
-			date("Y-m-d H:i:s")
+			date("Y-m-d H:i:s"),
+			getGeoPosition(getLocation())
 		))){
 		echo json_encode( array("status"=>"KO","error"=>$conn->error) );
 		$conn->close();
@@ -33,8 +34,8 @@ if ( $_POST['nombre'] && $_POST['mensaje'] ) {
 	}
 	else {
 		if(!$conn->query( sprintf(
-			"insert into messages (message,person_name,location,creation_date,help_amount) values ('%s','%s','%s','%s',%s)",
-			$_POST['mensaje'],$_POST['nombre'],getLocation(),date("Y-m-d H:i:s"),$_POST['extra_kg']
+			"insert into messages (message,person_name,location,creation_date,help_amount,province) values ('%s','%s','%s','%s',%s,'%s')",
+			$_POST['mensaje'],$_POST['nombre'],getLocation(),date("Y-m-d H:i:s"),$_POST['extra_kg'],getGeoPosition(getLocation())
 		))){
 			echo $conn->error;
 			$conn->close();
@@ -74,6 +75,22 @@ function getLocation(){
 	if ($_POST['location'] !== ''){
 		return $_POST['location'];
 	}
+}
+
+function getGeoPosition($address){
+	$url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=%s&sensor=false";
+	$json = file_get_contents(sprintf($url,$address));
+
+	$data = json_decode($json, TRUE);
+	if($data['status']=="OK"){
+		$ac = $data['results']['0']['address_components'];
+		foreach ($ac as $token){
+			if (in_array("administrative_area_level_2",$token["types"])){
+				return $token['long_name'];
+			}
+		}
+	}
+	return '';
 }
 
 ?>

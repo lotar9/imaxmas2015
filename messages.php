@@ -29,7 +29,7 @@ include ('functions.php');
 							    echo "<td>".$row->person_name."</td>";
 							    echo "<td>".$row->message."</td>";
 							    echo "<td>".$row->help_amount."</td>";
-							    echo "<td>".$row->location."</td>";
+							    echo "<td>".$row->province."</td>";
 							    echo "</tr>";
 							}
 						?>

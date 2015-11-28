@@ -241,7 +241,7 @@ h1 sub
 		while($row = $results->fetch_object()){
 	?>
 	<p>
-		<?=sprintf("%s -%s",$row->person_name,$row->location)?><br/>
+		<?=sprintf("%s -%s",$row->person_name,$row->province)?><br/>
 		<?=sprintf("%s-%s",$row->help_amount,$row->message)?>
 	</p>
 	<?php
