@@ -45,17 +45,17 @@ var playGame = function(game){};
 
 playGame.prototype = {
      preload: function(){
-          game.load.image("ship", "/game/sprites/level2/02_barco.png");
-          game.load.image("boya", "/game/sprites/level2/02_boya.png");
-          game.load.image("faro", "/game/sprites/level2/02_faro.png");
-          game.load.image("tortugas", "/game/sprites/level2/02_tortugas.png");
-          game.load.image("whale", "/game/sprites/level2/02_ballena.png");
-          game.load.image("whale_r", "/game/sprites/level2/02_ballena_r.png");
-          game.load.image('starfield', '/game/sprites/level2/02_fondo-mar.png');
-          game.load.audio('music', ['/game/music/level2/level2.mp3', '/game/music/level2/level2.ogg']);
-          game.load.audio('boatSound', ['/game/music/level2/boat.mp3', '/game/music/level2/boat.ogg']);
-          game.load.audio('whaleSound', ['/game/music/level2/whale.mp3', '/game/music/level2/whale.ogg']);
-          game.load.audio('boatMoveSound', ['/game/music/level2/boatMove.mp3', '/game/music/level2/boatMove.ogg']);
+          game.load.image("ship", "sprites/level2/02_barco.png");
+          game.load.image("boya", "sprites/level2/02_boya.png");
+          game.load.image("faro", "sprites/level2/02_faro.png");
+          game.load.image("tortugas", "sprites/level2/02_tortugas.png");
+          game.load.image("whale", "sprites/level2/02_ballena.png");
+          game.load.image("whale_r", "sprites/level2/02_ballena_r.png");
+          game.load.image('starfield', 'sprites/level2/02_fondo-mar.png');
+          game.load.audio('music', ['music/level2/level2.mp3', 'music/level2/level2.ogg']);
+          game.load.audio('boatSound', ['music/level2/boat.mp3', 'music/level2/boat.ogg']);
+          game.load.audio('whaleSound', ['music/level2/whale.mp3', 'music/level2/whale.ogg']);
+          game.load.audio('boatMoveSound', ['music/level2/boatMove.mp3', 'music/level2/boatMove.ogg']);
           /*game.load.audio('starSound', ['/music/level2/Ding.mp3', '/music/level2/Ding.ogg']);
           game.load.spritesheet('star', '/sprites/level2/01-04_estrella_bonus.png', 157, 150, 8);*/
      },
@@ -106,17 +106,17 @@ playGame.prototype = {
           }
 
           game.physics.arcade.collide(ship, whaleGroup, function(){
-               shipHit = 100;   
+               shipHit = 100;
                music.stop();
                whaleSound.stop();
                game.state.start("Level2");
           });
 
           game.physics.arcade.collide(ship, barrierGroup, function(){
-               shipHit = 100; 
+               shipHit = 100;
                music.stop();
                whaleSound.stop();
-               game.state.start("Level2"); 
+               game.state.start("Level2");
           });
 
           /*starGroup.forEach(function(star){
@@ -124,7 +124,7 @@ playGame.prototype = {
                     //score += 25;
                     starSound.play();
                     //scoreText.text = scoreString + score;
-                    star.destroy();    
+                    star.destroy();
                });
           })*/
      }
@@ -138,7 +138,7 @@ function moveShipRight(){
 
           ship.angle += 20;
 
-          var moveTween = game.add.tween(ship).to({ 
+          var moveTween = game.add.tween(ship).to({
                x: shipPositionsX[shipPosition],
           }, shipHorizontalSpeed, Phaser.Easing.Linear.None, true);
           moveTween.onComplete.add(function(){
@@ -146,7 +146,7 @@ function moveShipRight(){
                     ship.angle -= 20;
                });
           });
-          
+
           boatMoveSound.play();
 }
 
@@ -158,7 +158,7 @@ function moveShipLeft(){
 
           ship.angle -= 20;
 
-          var moveTween = game.add.tween(ship).to({ 
+          var moveTween = game.add.tween(ship).to({
                x: shipPositionsX[shipPosition],
           }, shipHorizontalSpeed, Phaser.Easing.Linear.None, true);
           moveTween.onComplete.add(function(){
@@ -208,7 +208,7 @@ Barrier = function (game) {
      game.physics.enable(this, Phaser.Physics.ARCADE);
 
      this.anchor.set(0.5);
-     
+
      var shine = this.animations.add('shine');
      this.animations.play('shine', 30, true);
 };*/
@@ -321,7 +321,7 @@ function initShip(){
 
 function addWhale(){
      var whale = new Whale(game);
-               
+
      whale.scale.setTo(0.6 * World.scaleCoef,0.6 * World.scaleCoef);
 
      game.add.existing(whale);
@@ -330,7 +330,7 @@ function addWhale(){
 
 function addBarrier(){
      var barrier = new Barrier(game);
-               
+
      barrier.scale.setTo(0.5 * World.scaleCoef,0.5 * World.scaleCoef);
 
      game.add.existing(barrier);
@@ -339,7 +339,7 @@ function addBarrier(){
 
 /*function addStar(){
      var star = new Star(game);
-               
+
      star.scale.setTo(0.5 * World.scaleCoef,0.5 * World.scaleCoef);
 
      game.add.existing(star);
@@ -369,12 +369,12 @@ function end(){
      gameIsOver = true;
 
      movementTween = game.add.tween( ship ).to(
-       { 
+       {
            y: -game.height * 1.5,
-       }, 
-       2500, 
-       Phaser.Easing.Linear.None, 
-       true 
+       },
+       2500,
+       Phaser.Easing.Linear.None,
+       true
      );
 
      movementTween.onComplete.add( function()

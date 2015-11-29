@@ -95,6 +95,9 @@ a.youtube-video img.sn-logo {
   width: 800px;
   height: 450px;
 }
+#game-frame {
+  border: 0px;
+}
 .language span {
 cursor: pointer;
 }

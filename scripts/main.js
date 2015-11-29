@@ -10,6 +10,13 @@ $(function(){
 	data[1].value = KG_GOAL-kg_obtained;
 	var ctx = document.getElementById("myChart").getContext("2d");
 	var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
+	var gameFrame = $('#game-frame');
+	var width =($(window).width())*0.99;
+	var height = ($(window).height())*0.99;
+	gameFrame.width( width );
+	gameFrame.height( height );
+	setupDefaultLanguage();
+	//gameFrame.attr('src','game/index.html');
 
 });
 
@@ -78,9 +85,9 @@ function endGame(punctuation) {
 function formSubmit(){
 	var formulario	= $('#formulario');
 	var nombre	= $('#person_name').val();
-	var mensaje	= $('#message_text').val();	  
+	var mensaje	= $('#message_text').val();
 	$('#extra_kg').val( KG_MESSAGE );
-	 
+
 	if ( nombre.length > 0 && mensaje.length > 0 ){
 		formulario.submit();
 		return true;
@@ -89,12 +96,3 @@ function formSubmit(){
 		return false;
 	}
 }
-
-function changeLan (lan) {
-	$.getJSON("trads.json", function(data) {
-                $.each(data[lan], function(id,trad) {
-			document.getElementById(id).innerHTML = trad;
-                });
-            });
-}
-

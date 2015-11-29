@@ -1,5 +1,5 @@
 <?php
-include ('functions.php');  
+include ('functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +14,12 @@ include ('functions.php');
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		<script src="scripts/jquery.scrollify.min.js"></script>
-		<script type="text/javascript"></script>
+		<script src="scripts/language.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			setupDefaultLanguage();
+		}
+		</script>
 	</head>
 	<body>
 		<section class="scores">

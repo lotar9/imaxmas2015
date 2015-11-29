@@ -53,14 +53,14 @@ heliGame.prototype = {
      preload: function(){
           var assets = {
         image: {
-        	background: ["/game/sprites/level4/04_fondo.png"],
-            municion: ['/game/sprites/level4/04_paq_ayuda.png'],
-            fence: ['/game/sprites/level4/fence.png'],
-            finger: ['/game/sprites/level4/Arbol.png']
+        	background: ["sprites/level4/04_fondo.png"],
+            municion: ['sprites/level4/04_paq_ayuda.png'],
+            fence: ['sprites/level4/fence.png'],
+            finger: ['sprites/level4/Arbol.png']
         },
         audio: {
             //flap: ['/music/level4/flap.wav'],
-            scoresound: ['/game/music/level4/collect.mp3']
+            scoresound: ['music/level4/collect.mp3']
             //hurt: ['/music/level4/hurt.wav']
         }
     };
@@ -69,12 +69,12 @@ heliGame.prototype = {
             game.load[type].apply(game.load, [id].concat(assets[type][id]));
         });
     });
-    helicopter = game.load.image("helicopter" , "/game/sprites/level4/04_helicoptero.png");
-    aldea = game.load.image("aldea" , "/game/sprites/level4/04_aldea.png");
-    package = game.load.image("package" , "/game/sprites/level4/municion.gif");
-    game.load.audio('base', ['/game/music/level4/jungle_loop.mp3','/game/music/level4/jungle_loop.ogg']);
-    game.load.audio('gameoversound', ['/game/music/level4/game-over.mp3']);
-    game.load.audio('helicoptersound', ['/game/music/level4/helicopter.mp3']);
+    helicopter = game.load.image("helicopter" , "sprites/level4/04_helicoptero.png");
+    aldea = game.load.image("aldea" , "sprites/level4/04_aldea.png");
+    package = game.load.image("package" , "sprites/level4/municion.gif");
+    game.load.audio('base', ['music/level4/jungle_loop.mp3','music/level4/jungle_loop.ogg']);
+    game.load.audio('gameoversound', ['music/level4/game-over.mp3']);
+    game.load.audio('helicoptersound', ['music/level4/helicopter.mp3']);
      },
      create: function(){
 
@@ -136,9 +136,9 @@ heliGame.prototype = {
      },
      update: function(){
 		 if (gameStarted) {
-  
+
         var dvy = FLAP + helicopter.body.velocity.y;
-      
+
         if (
             gameOver ||
             helicopter.angle > 90 ||
@@ -159,7 +159,7 @@ heliGame.prototype = {
             }
             gameOverText.angle = Math.random() * 5 * Math.cos(game.time.now / 100);
         } else {
-            
+
             if(game.physics.arcade.overlap(municion, aldeas)){
 				municion.kill();
             	addScore();
@@ -207,7 +207,7 @@ heliGame.prototype = {
         fence.tilePosition.x -= game.time.physicsElapsed * SPEED;
         background.tilePosition.x -= game.time.physicsElapsed * SPEED;
     }
-          
+
      }
 }
 function finish(){
@@ -245,8 +245,8 @@ function tirar () {
 		this.game.physics.enable(municion, Phaser.Physics.ARCADE);
 		municion.body.velocity.setTo(20, 200);
 		municion.body.bounce.set(0.1);
-		municion.body.gravity.set(0, 100); 
-	}  
+		municion.body.gravity.set(0, 100);
+	}
 };
 function start() {
     helicopter.body.allowGravity = true;
@@ -277,11 +277,11 @@ function drawPackages()
         packageText.destroy();
     }
 
-    packageText = this.game.add.text( 
-        80, 
-        12, 
-        World.totalScore / 10 + " ", 
-        { fontSize: '28px', fill: '#FFF', stroke: '#000', strokeThickness: '5' } 
+    packageText = this.game.add.text(
+        80,
+        12,
+        World.totalScore / 10 + " ",
+        { fontSize: '28px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
     );
 }
 
@@ -292,7 +292,7 @@ function addScore() {
     //scoreText.setText(score);
 }
 function spawnfinger() {
-	
+
     finger = fingers.create(
         this.game.width,
         this.game.height -100,
@@ -304,9 +304,9 @@ function spawnfinger() {
 	finger.scale.setTo(2,2);
 	//fingerY += (fingerYrandom ? -o() + game.rnd.integerInRange(0,100) : (o()) /4) + game.rnd.integerInRange(0,100) ;
 	finger.reset(this.game.width, (this.game.height - game.rnd.integerInRange(finger.body.height*2,finger.body.height -32)) );
-	
+
     //aldea.body.offset.y = flipped ? -aldea.body.height * 0 : 0;
-	
+
     // Move to the left
     finger.body.velocity.x -=  (game.time.physicsElapsed*50) * SPEED;
 	this.game.time.events.remove(timeFinger);
@@ -329,7 +329,7 @@ function spawnaldea() {
 	aldea.reset(this.game.width, this.game.height - aldea.body.height/2 - fence.body.height);
     aldea.scale.setTo(0.5,0.5);
     //aldea.body.offset.y = flipped ? -aldea.body.height * 0 : 0;
-	
+
     // Move to the left
     aldea.body.velocity.x -=  (game.time.physicsElapsed*50) * SPEED;
 	this.game.time.events.remove(timeAldea);
@@ -396,7 +396,3 @@ function reset() {
     //
     drawPackages();
 }
-
-
-
-

@@ -13,9 +13,10 @@ require_once("functions.php");
 		<link rel="stylesheet" href="./css/main.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 		<script src="scripts/jquery.scrollify.min.js"></script>
 		<script type="text/javascript" src="scripts/main.js" ></script>
+		<script type="text/javascript" src="scripts/language.js" ></script>
 		<script type="text/javascript">
 			var kg_obtained=<?php echo getKgObtained()?>;
 		</script>
@@ -23,11 +24,11 @@ require_once("functions.php");
 	<body>
 		<section class="panel logo">
 			<div class="inner">
-				<p class="language"><span id="es" onclick="changeLan(this.id)">ES</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="en" onclick="changeLan(this.id)">EN</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="pt" onclick="changeLan(this.id)">PT</span></p>
-				<h1>XMAS IMAWEB 2015</h1>
-				<p>Bienvenidos blablablbablalblabla</p>
-				<canvas id="myChart" width="150" height="150"></canvas>		
-				<p class="about">From <a href='http://www.imaweb.net/' target='_blank' class='imaweb'>Imaweb</a> with ♥</p>
+				<p class="language"><span id="ES" onclick="changeLan(this.id)">ES</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="EN" onclick="changeLan(this.id)">EN</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="PT" onclick="changeLan(this.id)">PT</span></p>
+				<h1 id="titleXmas">XMAS IMAWEB 2015</h1>
+				<p id="welcome">welcome</p>
+				<canvas id="myChart" width="150" height="150"></canvas>
+				<p class="about">Imaweb 2000 S.L</p>
 			</div>
 		</section>
 		<section class="panel explanation">
@@ -46,41 +47,38 @@ require_once("functions.php");
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
 							<img src="img/initial.jpg" alt="Inicial">
-							<div class="carousel-caption">
-								Juan Pablo puto aquí va una imagen inicial que se te ocurra
+							<div id="carousel-0" class="carousel-caption">
+								carousel-0
 							</div>
 						</div>
 						<div class="item">
 							<img src="img/city.jpg" alt="Ciudad">
-							<div id="ciudad" class="carousel-caption">
-								Recopila toda la ayuda posible que cae del cielo, recuerda que necesitamos comida no perecedera, material médico y libros. ¡Pero cuidado! Algún vecino desalmado nos está tirando
-								macetas y esas no nos sirve, en Mozambique ya tienen bastante vegetación.
+							<div id="carousel-1" class="carousel-caption">
+								carousel-1
 							</div>
 						</div>
 						<div class="item">
 							<img src="img/sea.jpg" alt="Mar">
-							<div id="mar" class="carousel-caption">
-								Lleva toda la ayuda recolectada a traves del Estrecho de Gibraltar en nuestra lancha. No te dejes obnuvilar con la belleza de las ballenas y las tortugas y cuidado con cochar con
-								los faros o tendrás que empezar de nuevo.
+							<div id="carousel-2" class="carousel-caption">
+								carousel-2
 							</div>
 						</div>
 						<div class="item">
 							<img src="img/desert.jpg" alt="Desierto">
-							<div id="desierto" class="carousel-caption">
-								Subete a nuestro 4x4 y atraviesa el desierto para llegar a Mozambique. Debes recoger bidones de combustible para que el 4x4 no se quede parado y tengas que volver a empezar.
-								¡Y no choques con nada!
+							<div id="carousel-3" class="carousel-caption">
+								carousel-3
 							</div>
 						</div>
 						<div class="item">
 							<img src="img/forrest.jpg" alt="Selva">
-							<div id="selva" class="carousel-caption">
-								Reparte la ayuda desde el helicóptero que sobrevuela la selva, lanzandola sobre las aldeas que aparecen. Si fallas, no contará como ayuda entregada.
+							<div id="carousel-4" class="carousel-caption">
+								carousel-4
 							</div>
 						</div>
 						<div class="item">
 							<img src="img/final.jpg" alt="Final">
-							<div class="carousel-caption">
-								Juan Pablo puto aquí va una imagen final
+							<div id="carousel-5" class="carousel-caption">
+								carousel-5
 							</div>
 						</div>
 					</div>
@@ -99,29 +97,38 @@ require_once("functions.php");
 		<section class="panel game">
 			<div class="game">
 				<!-- Contenido del videojuego -->
+				<iframe id="game-frame" src=""></iframe>
 			</div>
 		</section>
 		<section class="panel final">
 			<div class="inner">
 				<div class="middle">
-					<h2 id="title_section4">GRACIAS POR PARTICIPAR! HAS RECOLECTADO <span class='punctuation'>0</span> KILOS DE AYUDA!</h2>
-					<p id="info_menssage">Si dejas un mensaje se donaran 20 Kgs más<p>
-					<form id="formulario" method="POST" action="functions.php" onsubmit="return formSubmit();" >
+					<h2> <span id="title_section4">Thanks</span> <span class='punctuation'>0</span> <span id="title_section5">help</span></h2>
+					<p id="info_message">message<p>
+					<form class="form-horizontal" id="formulario" method="POST" action="functions.php" onsubmit="return formSubmit();" >
 						<input type = "hidden" name="location" id="message_location"/>
 						<input type="hidden" name="id" id="message_id"/>
 						<input type="hidden" name="extra_kg" id="extra_kg"/>
 						<div class="form-group">
-						<label id="name">Nombre</label>
-						<input id="person_name" name="nombre" class="form-control" type="text" placeholder="Nombre"/>
+							<label class="col-sm-2 control-label" id="name">name</label>
+							<div class="col-sm-10">
+								<input class="form-control" id="person_name" maxlength="255" name="nombre" type="text"/>
+							</div>
 						</div>
 						<div class="form-group">
-						<label id="message">Mensaje</label>
-						<textarea id="message_text" name="mensaje" class="form-control" rows="5" cols="40" placeholder="Mensaje"></textarea>
-						<button id="submit" type="submit" class="btn btn-default">Enviar</button>
+							<label class="col-sm-2 control-label" id="message">message</label>
+							<div class="col-sm-10">
+								<textarea class="form-control" id="message_text" name="mensaje" rows="3" cols="40" ></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default"><span id="submit">send</span></button>
+							</div>
 						</div>
 					</form>
 					<iframe class="video-frame" src="https://www.youtube.com/embed/ZkJpzTNeaZQ" frameborder="0" allowfullscreen></iframe>
-					<p id="share">Compartelo con tus conocidos!</p>
+					<p id="share">share</p>
 					<p>
 						<a href='' class='twitter-intent'><img class='sn-logo' src='img/twitter.png' /></a>
 						<a href='' class='facebook-intent'><img class='sn-logo' src='img/facebook.png' /></a>

@@ -12,12 +12,12 @@
 
         this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO, "" );
     }
-    
+
     World.prototype.addState = function( name, state )
     {
         this.game.state.add( name, state );
     }
-    
+
     World.prototype.goToLevel = function( level )
     {
         setTimeout( function()
@@ -54,11 +54,11 @@
 
     Score.prototype.draw = function()
     {
-        return this.game.add.text( 
-            this.x, 
-            this.y, 
-            this.total  + ' ', 
-            { fontSize: '32px', fill: '#FFF', stroke: '#000', strokeThickness: '5' } 
+        return this.game.add.text(
+            this.x,
+            this.y,
+            this.total  + ' ',
+            { fontSize: '32px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
         );
     }
 
@@ -104,11 +104,11 @@
 
     Timer.prototype.draw = function()
     {
-        return this.game.add.text( 
-            this.x, 
-            this.y, 
-            this.remaining + ' ', 
-            { fontSize: '52px', fill: '#FFF', stroke: '#000', strokeThickness: '5' } 
+        return this.game.add.text(
+            this.x,
+            this.y,
+            this.remaining + ' ',
+            { fontSize: '52px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
         );
     }
 
