@@ -49,10 +49,15 @@ div.middle {
   }
 }
 
-p.about {
+.about {
   position: absolute;
-  left: 40px;
   bottom: 20px;
+}
+p.about{
+  left: 10px;
+}
+div.about {
+  right: 10px;
 }
 
 p.language {

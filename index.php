@@ -24,10 +24,16 @@ require_once("functions.php");
 	<body>
 		<section class="panel logo">
 			<div class="inner">
-				<p class="language"><span id="ES" onclick="changeLan(this.id)">ES</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="EN" onclick="changeLan(this.id)">EN</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="PT" onclick="changeLan(this.id)">PT</span></p>
 				<h1 id="titleXmas">XMAS IMAWEB 2015</h1>
 				<p id="welcome">welcome</p>
 				<canvas id="myChart" width="150" height="150"></canvas>
+				<div class="about">
+					<div class="btn-group" role="group" aria-label="LanguageSelector">
+  					<button id="ES" onclick="changeLan(this.id)" type="button" class="btn btn-default">ES</button>
+  					<button id="EN" onclick="changeLan(this.id)" type="button" class="btn btn-default">EN</button>
+  					<button id="PT" onclick="changeLan(this.id)" type="button" class="btn btn-default">PT</button>
+					</div>
+				</div>
 				<p class="about">Imaweb 2000 S.L</p>
 			</div>
 		</section>
