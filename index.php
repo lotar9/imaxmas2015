@@ -157,7 +157,7 @@ require_once("functions.php");
 			<div class="modal-dialog" role="document">
 				<div class="modal-content" >
 					<div class="modal-body">
-						<iframe src="game.html"></iframe>
+						<iframe src="game.html" width="100%" height="100%"></iframe>
 					</div>
 				</div>
 			</div>
