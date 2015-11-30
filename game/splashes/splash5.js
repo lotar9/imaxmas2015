@@ -2,8 +2,13 @@ var game = World.game;
 
 function preload()
 {
-    game.load.image( 'background','sprites/level4/04_fondo.png' );
-    game.load.image( 'button','sprites/shared/ok_button.gif' );
+    game.load.image( 'background','game/splashes/img/final.png' );
+    game.load.spritesheet('button','game/sprites/shared/ok_button.png',505,180);
+}
+
+function endClick(){
+    top.exitGame();
+    World.goToLevel('Splash0' );
 }
 
 function create()
@@ -13,13 +18,17 @@ function create()
    	background.tileScale.x = 0.5;
 
     var button = game.add.button(
-        game.world.centerX - game.cache.getImage( "button" ).width / 2,
-        game.world.centerY - game.cache.getImage( "button" ).height / 2 + 150,
-        'button',
-        top.endGame.bind( this, World.totalScore ),
-        this
+        game.world.centerX,
+    	game.world.centerY+135,
+    	'button',
+    	endClick,
+    	this,
+        1,0,1
     );
+    button.scale.setTo(0.5,0.5);
+    button.anchor.setTo(0.5,0.5);
 
+    /*
    	var text = game.add.text(
         0,
         150,
@@ -35,10 +44,10 @@ function create()
         { fontSize: '42px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
     );
     text2.x = game.world.centerX - text2.width / 2;
+    */
 
     var enter = game.input.keyboard.addKey( Phaser.Keyboard.ENTER );
-    enter.onDown.add( top.endGame.bind( this, World.totalScore ) );
+    enter.onDown.add( endClick,this );
 }
 
 World.addState( 'Splash5', { preload: preload, create: create } );
-World.goToLevel( 'Splash5' );

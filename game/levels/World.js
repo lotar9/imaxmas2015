@@ -10,7 +10,7 @@
         this.scaleCoef = this.width / 1024 / 2; // Retina
         this.totalScore = 0;
 
-        this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO, "" );
+        this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO, "game_frame" );
     }
 
     World.prototype.addState = function( name, state )

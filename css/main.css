@@ -100,8 +100,15 @@ a.youtube-video img.sn-logo {
   width: 800px;
   height: 450px;
 }
-#game-frame {
-  border: 0px;
+div.game_frame {
+    display : block;
+    margin : auto;
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
 }
 .language span {
 cursor: pointer;

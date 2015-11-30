@@ -2,8 +2,8 @@ var game = World.game;
 
 function preload()
 {
-    game.load.image( 'button', 'sprites/shared/play_button.gif' );
-    game.load.image( 'background','sprites/level4/04_fondo.png' );
+    game.load.spritesheet('button','game/sprites/shared/play_button.png',505,180);
+    game.load.image( 'background','game/splashes/img/village.png' );
 }
 
 function create()
@@ -12,14 +12,18 @@ function create()
     background.tileScale.y = 0.5;
    	background.tileScale.x = 0.5;
 
-   	var button = game.add.button(
-    	game.world.centerX - game.cache.getImage( "button" ).width / 2,
-    	game.world.centerY - game.cache.getImage( "button" ).height / 2 + 150,
+    var button = game.add.button(
+        game.world.centerX,
+    	game.world.centerY+20,
     	'button',
     	World.goToLevel.bind( this, 'Level4' ),
-    	this
+    	this,
+        1,0,1
     );
+    button.scale.setTo(0.5,0.5);
+    button.anchor.setTo(0.5,0.5);
 
+/*
    	var text = game.add.text(
         0,
         150,
@@ -35,6 +39,7 @@ function create()
         { fontSize: '42px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
     );
     text2.x = game.world.centerX - text2.width / 2;
+*/
 
    	var enter = game.input.keyboard.addKey( Phaser.Keyboard.ENTER );
    	enter.onDown.add( World.goToLevel.bind( this, 'Level4' ) );

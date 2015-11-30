@@ -17,7 +17,7 @@ if ( $_POST['score'] ){
 		$conn->close();
 		exit();
 	}
-	
+
 }
 
 if ( $_POST['nombre'] && $_POST['mensaje'] ) {
@@ -62,7 +62,7 @@ function listScores() {
 		echo $conn->error;
 		$conn->close();
 		exit;
-	}	
+	}
 	return $res;
 }
 
@@ -75,6 +75,7 @@ function getLocation(){
 	if ($_POST['location'] !== ''){
 		return $_POST['location'];
 	}
+	return '';
 }
 
 function getGeoPosition($address){

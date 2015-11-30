@@ -10,14 +10,7 @@ $(function(){
 	data[1].value = KG_GOAL-kg_obtained;
 	var ctx = document.getElementById("myChart").getContext("2d");
 	var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
-	var gameFrame = $('#game-frame');
-	var width =($(window).width())*0.99;
-	var height = ($(window).height())*0.99;
-	gameFrame.width( width );
-	gameFrame.height( height );
 	setupDefaultLanguage();
-	//gameFrame.attr('src','game/index.html');
-
 });
 
 function getLocation(){
@@ -72,14 +65,18 @@ function endGame(punctuation) {
 			if (msg.status == 'OK'){
 				$('#message_id').val( msg.id );
 				$('span.punctuation').text(punctuation);
-				$('iframe.video-frame').attr('src','https://www.youtube.com/embed/ZkJpzTNeaZQ?autoplay=1');
-				location.hash = "#4";
+
 			}
 			else {
 				alert(msg.error);
 			}
 		}
 	   });
+}
+
+function exitGame(){
+	$('iframe.video-frame').attr('src','https://www.youtube.com/embed/ZkJpzTNeaZQ?autoplay=1');
+	location.hash = "#4";
 }
 
 function formSubmit(){

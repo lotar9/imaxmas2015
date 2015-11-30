@@ -20,12 +20,10 @@ function setupDefaultLanguage(){
 }
 
 function changeLan(lan) {
-  alert("Cambiando idioma a "+lan);
+  console.log("Cambiando idioma a "+lan);
 	$.getJSON("trads.txt", function(data) {
-		alert(data);
                 $.each(data[lan], function(id,trad) {
-									alert("Cambiando "+id+ " a "+trad);
-									$('#'+id).html(trad);
+					$('#'+id).html(trad);
                 });
             });
 	document.cookie="language="+lan;
