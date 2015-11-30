@@ -1,5 +1,5 @@
 <?php
-include ('functions.php');  
+include ('functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,12 +73,12 @@ p#start
 h1
 {
 	position: absolute;
-	width: 2.6em;
+	width: 5.2em;
 	left: 50%;
 	top: 25%;
 	font-size: 10em;
 	text-align: center;
-	margin-left: -1.3em;
+	margin-left: -2.6em;
 	line-height: 0.8em;
 	letter-spacing: -0.05em;
 	color: #000;
@@ -230,23 +230,53 @@ h1 sub
 
 <p id="start">A short time ago in a country far,far,away...&hellip;</p>
 
-<h1>ROAD TO PRAIA DE XAI-XAI<sub>MESSAGES</sub></h1>
+<h1>ROAD TO PRAIA DE XAI-XAI</h1>
 
 <div id="titles"><div id="titlecontent">
 
-	<p class="center">PERSON - LOCATION<br />AMOUNT - MESSAGE</p>
+	<p>In alphabetical order</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><b>ORIGINAL IDEA</b></p>
+	<p>&nbsp;Ricardo "Obi Wan Kenobi" García Duarte</p>
+	<p>&nbsp;Rubén "Luke Skywalker" Martín</p>
+	<p>&nbsp;Sergio "Darth Vader" Canales</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><b>GAME DEVELOPMENT</b></p>
+	<p>&nbsp;Alejandro "C-3PO" Fernández</p>
+	<p>&nbsp;Alejandro "Chewbacca" Manero</p>
+	<p>&nbsp;Alejandro "Yoda" Medina</p>
+	<p>&nbsp;Daniel "Darth Maul" Doval</p>
+	<p>&nbsp;Rubén "Luke Skywalker" Martín</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><b>WEBPAGE DEVELOPMENT</b></p>
+	<p>&nbsp;Adrian "Jar Jar Binks" Mora</p>
+	<p>&nbsp;David "Ewok" Casado</p>
+	<p>&nbsp;Sergio "Darth Vader" Canales</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><b>WEBPAGE DESIGN</b></p>
+	<p>&nbsp;Juan Pablo "Han Solo" Dana</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><b>TESTING</b></p>
+	<p>&nbsp;Adriana "Watto" Menacho</p>
+	<p>&nbsp;Diego "R2D2" Iglesias</p>
+	<p>&nbsp;Fernando "Palpatine" del Alisal</p>
+	<p>&nbsp;Mariela "Leia Organa" Muzzi</p>
+	<p>&nbsp;Rocio "Padmé Amidala" López</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><b>LANGUAGE ADAPTATION</b></p>
+	<p>&nbsp;Jesús "Lando Calrissian" Quero</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>An Imaweb 2000 S.L Production - 2015</p>
 
-	<?php
-		$results = listScores();
-		while($row = $results->fetch_object()){
-	?>
-	<p>
-		<?=sprintf("%s -%s",$row->person_name,$row->province)?><br/>
-		<?=sprintf("%s-%s",$row->help_amount,$row->message)?>
-	</p>
-	<?php
-	}
-	?>
+
+
 </div></div>
 
 </body>
