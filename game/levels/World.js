@@ -35,7 +35,7 @@
     }
 
     window.World = new World;
-} )( top, Phaser );
+} )( window, Phaser );
 
 /***************************
  * SCORE
@@ -83,7 +83,7 @@
     }
 
     window.Score = Score;
-} )( top, Phaser, World );
+} )( window, Phaser, World );
 
 /***************************
  * TIMER
@@ -128,4 +128,4 @@
     }
 
     window.Timer = Timer;
-} )( top, Phaser );
+} )( window, Phaser );

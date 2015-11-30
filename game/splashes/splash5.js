@@ -8,7 +8,7 @@ function preload()
 
 function endClick(){
     top.exitGame();
-    World.goToLevel('Splash0' );
+    World.goToLevel('Splash1' );
 }
 
 function create()

@@ -553,4 +553,4 @@
             this.color = 0x33FF00;
         }
     }
-} )( top, World );
+} )( window, World );

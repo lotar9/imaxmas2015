@@ -65,7 +65,6 @@ function endGame(punctuation) {
 			if (msg.status == 'OK'){
 				$('#message_id').val( msg.id );
 				$('span.punctuation').text(punctuation);
-
 			}
 			else {
 				alert(msg.error);
@@ -75,8 +74,10 @@ function endGame(punctuation) {
 }
 
 function exitGame(){
+	$('#myModal').modal('toggle');
+	$(document.body).scrollTop($('#panel_final').offset().top);
+	//$(document.body).animate({'scrollTop':   $('#panel_final').offset().top	}, 2000);
 	$('iframe.video-frame').attr('src','https://www.youtube.com/embed/ZkJpzTNeaZQ?autoplay=1');
-	location.hash = "#4";
 }
 
 function formSubmit(){
