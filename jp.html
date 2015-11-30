@@ -17,18 +17,6 @@ require_once("functions.php");
 		<script src="scripts/jquery.scrollify.min.js"></script>
 		<script type="text/javascript" src="scripts/main.js" ></script>
 		<script type="text/javascript" src="scripts/language.js" ></script>
-		<script type="text/javascript" src="game/lib/phaser-2.4.4.min.js"></script>
-		<script type="text/javascript" src="game/levels/World.js"></script>
-		<script type="text/javascript" src="game/splashes/splash0.js"></script>
-		<script type="text/javascript" src="game/splashes/splash1.js"></script>
-		<script type="text/javascript" src="game/levels/level1.js"></script>
-		<script type="text/javascript" src="game/splashes/splash2.js"></script>
-		<script type="text/javascript" src="game/levels/level2.js"></script>
-		<script type="text/javascript" src="game/splashes/splash3.js"></script>
-		<script type="text/javascript" src="game/levels/level3.js"></script>
-		<script type="text/javascript" src="game/splashes/splash4.js"></script>
-		<script type="text/javascript" src="game/levels/level4.js"></script>
-		<script type="text/javascript" src="game/splashes/splash5.js"></script>
 		<script type="text/javascript">
 			var kg_obtained=20000;
 		</script>
@@ -64,37 +52,37 @@ require_once("functions.php");
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="game/splashes/img/initial.png" alt="Inicial">
+							<img src="img/initial.png" alt="Inicial">
 							<div id="carousel-0" class="carousel-caption">
 								carousel-0
 							</div>
 						</div>
 						<div class="item">
-							<img src="game/splashes/img/city.png" alt="Ciudad">
+							<img src="img/city.png" alt="Ciudad">
 							<div id="carousel-1" class="carousel-caption">
 								carousel-1
 							</div>
 						</div>
 						<div class="item">
-							<img src="game/splashes/img/sea.png" alt="Mar">
+							<img src="img/sea.png" alt="Mar">
 							<div id="carousel-2" class="carousel-caption">
 								carousel-2
 							</div>
 						</div>
 						<div class="item">
-							<img src="game/splashes/img/desert.png" alt="Desierto">
+							<img src="img/desert.png" alt="Desierto">
 							<div id="carousel-3" class="carousel-caption">
 								carousel-3
 							</div>
 						</div>
 						<div class="item">
-							<img src="game/splashes/img/village.png" alt="Selva">
+							<img src="img/village.png" alt="Selva">
 							<div id="carousel-4" class="carousel-caption">
 								carousel-4
 							</div>
 						</div>
 						<div class="item">
-							<img src="game/splashes/img/final.png" alt="Final">
+							<img src="img/final.png" alt="Final">
 							<div id="carousel-5" class="carousel-caption">
 								carousel-5
 							</div>
@@ -113,12 +101,19 @@ require_once("functions.php");
 			</div>
 		</section>
 		<section class="panel game">
-			<div class="game">
-				<!-- Contenido del videojuego -->
-				<div class="game_frame" id="game_frame"/>
+			<div class="inner">
+				<div class="middle">
+					<div class="ratio-wrapper">
+						<div class="ratio-wrapper-content">
+							<a data-toggle="modal" data-target="#myModal">
+  								<img class="play_button" src="game/sprites/shared/play_button.png">
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
-		<section class="panel final">
+		<section class="panel final" id="panel_final">
 			<div class="inner">
 				<div class="middle">
 					<h2> <span id="title_section4">Thanks</span> <span class='punctuation'>0</span> <span id="title_section5">help</span></h2>
@@ -145,7 +140,9 @@ require_once("functions.php");
 							</div>
 						</div>
 					</form>
-					<iframe class="video-frame" src="https://www.youtube.com/embed/ZkJpzTNeaZQ" frameborder="0" allowfullscreen></iframe>
+					<div class="video-wrapper">
+						<iframe src="https://www.youtube.com/embed/ZkJpzTNeaZQ" frameborder="0" allowfullscreen></iframe>
+					</div>
 					<p id="share">share</p>
 					<p>
 						<a href='' class='twitter-intent'><img class='sn-logo' src='img/twitter.png' /></a>
@@ -155,5 +152,15 @@ require_once("functions.php");
 				</div>
 			</div>
 		</section>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content" >
+					<div class="modal-body">
+						<iframe src="game.html"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
