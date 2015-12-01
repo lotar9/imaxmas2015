@@ -32,6 +32,47 @@
     </style>
 </head>
 <body>
+	<script type="text/javascript" src="scripts/language.js" ></script>
+	<script type="text/javascript">
+		var languageCode	= getLangValue();
+		var messageId 		= '';
+		var score 			= '';
+
+		function endGame(punctuation) {
+			$.ajax({
+				type: "POST",
+				url: "functions.php",
+				data: { "score": punctuation, "location": $('#message_location').val()},
+				dataType : "json",
+				success: function (msg) {
+					if (msg.status == 'OK'){
+						messageId = msg.id;
+						score = punctuation;
+					}
+					else {
+						score = punctuation;
+					}
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					score = punctuation;
+					alert(errorThrown);
+				}
+			   });
+		}
+    	function redirectPost(location, args)
+    	{
+        	var form = '';
+        	$.each( args, function( key, value ) {
+            	form += '<input type="hidden" name="'+key+'" value="'+value+'">';
+        	});
+        	$('<form action="'+location+'" method="POST">'+form+'</form>').appendTo('body').submit();
+    	}
+
+		function exitGame(){
+			redirectPost('index.php',{'punctuation':punctuation,'message_id':messageId});
+		}
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="game/lib/phaser-2.4.4.min.js"></script>
     <script type="text/javascript" src="game/levels/World.js"></script>
 	<script type="text/javascript" src="game/splashes/splash0.js"></script>
@@ -44,6 +85,7 @@
     <script type="text/javascript" src="game/splashes/splash4.js"></script>
     <script type="text/javascript" src="game/levels/level4.js"></script>
     <script type="text/javascript" src="game/splashes/splash5.js"></script>
+
 </body>
 	<div class="game_frame" id="game_frame"/>
 </html>

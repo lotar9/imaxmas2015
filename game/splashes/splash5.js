@@ -28,23 +28,14 @@ function create()
     button.scale.setTo(0.5,0.5);
     button.anchor.setTo(0.5,0.5);
 
-    /*
-   	var text = game.add.text(
-        0,
-        150,
-        "Enhorabuena! ",
-        { fontSize: '52px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
-    );
-    text.x = game.world.centerX - text.width / 2;
-
     var text2 = game.add.text(
         0,
         225,
-        "Has repartido " + World.totalScore + " Kg de ayuda ",
+        World.getTrad('game.youDelivered') + World.totalScore + " Kg de ayuda ",
         { fontSize: '42px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
     );
     text2.x = game.world.centerX - text2.width / 2;
-    */
+
 
     var enter = game.input.keyboard.addKey( Phaser.Keyboard.ENTER );
     enter.onDown.add( endClick,this );

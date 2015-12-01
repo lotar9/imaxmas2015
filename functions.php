@@ -1,4 +1,8 @@
 <?php
+if ( $_POST['get_kg_obtained']){
+	echo json_encode( array("status"=>"OK","value"=>getKgObtained()));
+	exit;
+}
 if ( $_POST['score'] ){
 	$conn = getConn();
 	if(!$conn->query( sprintf(

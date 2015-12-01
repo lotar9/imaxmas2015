@@ -6,12 +6,27 @@ $(function(){
 		offset: 0
 	});
 	getLocation();
-	data[0].value = kg_obtained;
-	data[1].value = KG_GOAL-kg_obtained;
-	var ctx = document.getElementById("myChart").getContext("2d");
-	var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
+	getTotalKgObtained();
 	setupDefaultLanguage();
+	p = gup('punctuation',document.location);
+	v = gup('message_id',document.location);
+	if (p != null && p != ''){
+		$('.punctuation').html(p);
+		if (v != null && v != ''){
+			$('#message_id').val(v);
+		}
+		$.scrollify.move("#4");
+	}
 });
+
+function gup( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
+}
 
 function getLocation(){
 	if (navigator.geolocation) {
@@ -55,31 +70,6 @@ var options = {
         animateScale : false,
 };
 
-function endGame(punctuation) {
-	$.ajax({
-		type: "POST",
-		url: "functions.php",
-		data: { "score": punctuation, "location": $('#message_location').val()},
-		dataType : "json",
-		success: function (msg) {
-			if (msg.status == 'OK'){
-				$('#message_id').val( msg.id );
-				$('span.punctuation').text(punctuation);
-			}
-			else {
-				alert(msg.error);
-			}
-		}
-	   });
-}
-
-function exitGame(){
-	$('#myModal').modal('toggle');
-	$(document.body).scrollTop($('#panel_final').offset().top);
-	//$(document.body).animate({'scrollTop':   $('#panel_final').offset().top	}, 2000);
-	$('iframe.video-frame').attr('src','https://www.youtube.com/embed/ZkJpzTNeaZQ?autoplay=1');
-}
-
 function formSubmit(){
 	var formulario	= $('#formulario');
 	var nombre	= $('#person_name').val();
@@ -93,4 +83,31 @@ function formSubmit(){
 		alert("Por favor rellena los dos campos");
 		return false;
 	}
+}
+
+function getTotalKgObtained(){
+	$.ajax({
+		type: "POST",
+		url: "functions.php",
+		data: { "get_kg_obtained":1 },
+		dataType : "json",
+		success: function (msg) {
+			if (msg.status == 'OK'){
+				data[0].value = msg.value;
+				data[1].value = KG_GOAL-msg.value;
+			}
+			else {
+				data[0].value = 0;
+				data[1].value = KG_GOAL;
+			}
+			var ctx = document.getElementById("myChart").getContext("2d");
+			var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown){
+			data[0].value = 0;
+			data[1].value = KG_GOAL;
+			var ctx = document.getElementById("myChart").getContext("2d");
+			var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
+		}
+	   });
 }

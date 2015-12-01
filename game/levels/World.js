@@ -9,8 +9,32 @@
         this.height = Math.round( ( this.width / 16 ) * 9 );
         this.scaleCoef = this.width / 1024 / 2; // Retina
         this.totalScore = 0;
-
+        window.trads = {};
+        this.loadTrads();
         this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO, "game_frame" );
+    }
+
+
+    World.prototype.loadTrads = function(){
+        $.ajax({
+            url: "trads.txt",
+            dataType: 'json',
+            async: false,
+            success: function(data) {
+                $.each(data[window.languageCode], function(id,trad) {
+                    if (id.indexOf('game.') == 0){
+                        window.trads[id]=trad;
+                    }
+                });
+            }
+        });
+    }
+
+    World.prototype.getTrad = function(search){
+        if (window.trads[search] == undefined){
+            return search;
+        }
+        return window.trads[search];
     }
 
     World.prototype.addState = function( name, state )
