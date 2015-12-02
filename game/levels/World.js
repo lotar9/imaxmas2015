@@ -112,7 +112,7 @@
             this.x,
             this.y,
             this.total  + ' ',
-            { fontSize: '32px', fill: '#FFF', stroke: '#000 }
+            { fontSize: '32px', fill: '#FFF', stroke: '#000' }
         );
     }
 
