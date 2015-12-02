@@ -110,7 +110,7 @@ var nivel1 = {
 		    audioMusic = this.game.add.audio( 'music' );
 			audioError.volume += 10;
 
-			audioMusic.play();
+			audioMusic.loopFull(1);
 
 			// lanzar items
 			itemsInterval = this.game.time.events.loop( 1000, this.throwItems.bind(this) );
