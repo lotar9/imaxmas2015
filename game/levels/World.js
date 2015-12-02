@@ -82,7 +82,7 @@
             this.x,
             this.y,
             this.total  + ' ',
-            { fontSize: '32px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
+            { fontSize: '32px', fill: '#FFF', stroke: '#000 }
         );
     }
 
@@ -132,7 +132,7 @@
             this.x,
             this.y,
             this.remaining + ' ',
-            { fontSize: '52px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
+            { fontSize: '52px', fill: '#FFF', stroke: '#000' }
         );
     }
 
