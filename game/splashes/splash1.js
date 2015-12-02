@@ -23,15 +23,8 @@ function create()
     button.scale.setTo(0.5,0.5);
     button.anchor.setTo(0.5,0.5);
 
-
-    var text = game.add.text(
-        0,
-        150,
-        World.getTrad('game.splash1Text'),
-        { font: '36px Lucida Console', fill: '#FFF' }
-    );
-
-    text.x = game.world.centerX - text.width / 2;
+    World.addLevelTitle(1);
+    World.addHelp(1);
 
    	var enter = game.input.keyboard.addKey( Phaser.Keyboard.ENTER );
    	enter.onDown.add( World.goToLevel.bind( this, 'Level1' ) );

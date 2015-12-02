@@ -23,22 +23,18 @@ function create()
     button.scale.setTo(0.5,0.5);
     button.anchor.setTo(0.5,0.5);
 
-   	var text = game.add.text(
-        0,
-        150,
-        World.getTrad('game.youcollected') + World.totalScore + " Kg ",
-        { fontSize: '52px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
-    );
-    text.x = game.world.centerX - text.width / 2;
+    World.addLevelTitle(2);
+    World.addHelp(2);
 
-    var text2 = game.add.text(
-        0,
-        225,
-        World.getTrad('splash2Text'),
-        { fontSize: '42px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
+    var text = this.game.add.text(
+      225,
+      430,
+      World.getTrad('game.kgCollected')+" "+World.totalScore+" kgs.",
+      { font: '36px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:400 }
     );
-    text2.x = game.world.centerX - text2.width / 2;
+    text.anchor.set(0.5);
 
+    //text3.x = game.world.centerX - (text3.width /2);
    	var enter = game.input.keyboard.addKey( Phaser.Keyboard.ENTER );
    	enter.onDown.add( World.goToLevel.bind( this, 'Level2' ) );
 }

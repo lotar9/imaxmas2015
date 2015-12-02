@@ -35,8 +35,6 @@
 	<script type="text/javascript" src="scripts/language.js" ></script>
 	<script type="text/javascript">
 		var languageCode	= getLangValue();
-		var messageId 		= '';
-		var score 			= '';
 
 		function endGame(punctuation) {
 			$.ajax({
@@ -46,15 +44,15 @@
 				dataType : "json",
 				success: function (msg) {
 					if (msg.status == 'OK'){
-						messageId = msg.id;
-						score = punctuation;
+						World.messageId = msg.id;
+						World.finalScore = punctuation;
 					}
 					else {
-						score = punctuation;
+						World.finalScore = punctuation;
 					}
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown){
-					score = punctuation;
+					World.finalScore = punctuation;
 					alert(errorThrown);
 				}
 			   });
@@ -69,7 +67,7 @@
     	}
 
 		function exitGame(){
-			redirectPost('index.php',{'punctuation':punctuation,'message_id':messageId});
+			redirectPost('index.html',{'punctuation':World.finalScore,'message_id':World.messageId});
 		}
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

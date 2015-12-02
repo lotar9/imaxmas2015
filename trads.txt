@@ -1,5 +1,9 @@
 {
 	"ES":{
+		"MenuHome":"Inicio",
+		"MenuRules": "Reglas",
+		"MenuGame": "Juega",
+		"MenuThanks": "Agradecimientos",
 		"titleXmas":"Imaweb Christmas 2015",
 		"welcome":"Bienvenido",
 		"score":"Puntuacion",
@@ -21,6 +25,10 @@
 		"game.splash1Text" : " Juan Pablo el vocablo"
 	},
 	"EN":{
+		"MenuHome":"Home",
+		"MenuRules": "Rules",
+		"MenuGame": "Play",
+		"MenuThanks": "Thanks",
 		"titleXmas":"Imaweb Christmas 2015",
 		"welcome":"Welcome",
 		"score":"Puntuacion",

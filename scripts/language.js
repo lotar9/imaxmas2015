@@ -24,7 +24,7 @@ function getLangValue(){
 function changeLan(lan) {
   console.log("Cambiando idioma a "+lan);
 	$.getJSON("trads.txt", function(data) {
-                $.each(data[lan], function(id,trad) {
+          $.each(data[lan], function(id,trad) {
 					if (id.indexOf('game.') == -1){
 						$('#'+id).html(trad);
 					}

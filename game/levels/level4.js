@@ -108,14 +108,14 @@ heliGame.prototype = {
     scoreText = game.add.text(
         this.game.width / 2,
         this.game.height / 4,
-        "",{font: "30px Monospace"}
+        "",{font: "30px Monospace",fill:"#FFF"}
     );
     scoreText.anchor.setTo(0.5, 0.5);
     // Add instructions text
     instText = game.add.text(
         this.game.width / 2,
         this.game.height - this.game.height / 4,
-        "",{font: "30px Monospace"}
+        "",{font: "30px Monospace",fill:"#FFF"}
     );
     instText.anchor.setTo(0.5, 0.5);
     //Add game over text
@@ -372,7 +372,7 @@ function initBackground4(){
 }
 
 function render() {
-	
+
     if (DEBUG) {
         game.debug.body(helicopter);
 
@@ -399,8 +399,8 @@ function reset() {
     }
     contador = 0;
     gameFinish = false;
-    scoreText.setText("COMENZAR");
-    instText.setText("PULSAR ARRIBA\nPARA COMENZAR");
+    scoreText.setText(World.getTrad("game.level4Start"));
+    instText.setText("game.level4PushUp");
     instText.renderable=true;
     helicopter.body.angle.y = 500;
     helicopter.reset((this.game.width * World.scaleCoef)/2, this.game.height * World.scaleCoef);

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-		<title>XMas Imaweb 2015</title>
+		<title>Route to Xai-Xai | Imaweb | 2015</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 		<link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="./css/main.css">
@@ -16,23 +16,47 @@
 		<script type="text/javascript" src="scripts/language.js" ></script>
 	</head>
 	<body>
-		<section class="panel logo">
-			<div class="inner">
-				<h1 id="titleXmas">XMAS IMAWEB 2015</h1>
-				<p id="welcome">welcome</p>
-				<canvas id="myChart" width="150" height="150"></canvas>
-				<div class="about">
-					<div class="btn-group" role="group" aria-label="LanguageSelector">
-  					<button id="ES" onclick="changeLan(this.id)" type="button" class="btn btn-default">ES</button>
-  					<button id="EN" onclick="changeLan(this.id)" type="button" class="btn btn-default">EN</button>
-  					<button id="PT" onclick="changeLan(this.id)" type="button" class="btn btn-default">PT</button>
-					</div>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img class="logo_top" src="img/logo_xl.png"></a>
 				</div>
-				<p class="about">Imaweb 2000 S.L</p>
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-6">
+					<ul class="nav navbar-nav">
+						<li class="active"><a scroll-panel="1" id="MenuHome" onclick="clickMenu(1,this)">Home</a></li>
+						<li><a scroll-panel="2" id="MenuRules" onclick="clickMenu(2,this)">Rules</a></li>
+						<li><a scroll-panel="3" id="MenuGame" onclick="clickMenu(3,this)">Game</a></li>
+						<li><a scroll-panel="4" id="MenuThanks" onclick="clickMenu(4,this)">Thanks</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a id="ES" onclick="changeLan(this.id)">ES</a></li>
+								<li><a id="EN" onclick="changeLan(this.id)">EN</a></li>
+								<li><a id="PT" onclick="changeLan(this.id)">PT</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="panel logo" scroll-panel="1">
+			<div class="inner">
+				<h1 class="logo_main"><img class="img-responsive" src="img/logo_xl.png"></h1>
+				<!-- <h1 id="titleXmas">XMAS IMAWEB 2015</h1> -->
+				<div class="welcome" id="welcome">
+					Bienvenidos a "Route to Praia de Xai-Xai". Gracias por participar y así poder ayudar a la funcación KHANIMAMBO y todo los chicos a los que llegan.
+				</div>
+				<div><span class="about">Imaweb 2000 S.L</span></div>
 			</div>
 		</section>
-		<section class="panel explanation">
+
+		<section class="panel explanation" scroll-panel="2">
 			<div class="inner">
+				<h2><span id="">Rules</span></h2>
 				<div id="carousel-levels" class="carousel slide" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -94,55 +118,69 @@
 				</div>
 			</div>
 		</section>
-		<section class="panel game">
+
+		<section class="panel game" scroll-panel="3">
 			<div class="inner">
 				<div class="middle">
+				<h2><span id="">Game</span></h2>
 					<div class="ratio-wrapper">
 						<div class="ratio-wrapper-content">
-							<a href="game.html">
-  								<img class="play_button" src="game/sprites/shared/play_button.png">
-							</a>
+							<a href="game.html" class="play">start<!-- <img class="play_button" src="game/sprites/shared/play_button.png"> --></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section class="panel final" id="panel_final">
+
+		<section class="panel final" id="panel_final" scroll-panel="4">
 			<div class="inner">
 				<div class="middle">
-					<h2> <span id="title_section4">Thanks</span> <span class='punctuation'>0</span> <span id="title_section5">help</span></h2>
-					<p id="info_message">message<p>
 					<form class="form-horizontal" id="formulario" method="POST" action="functions.php" onsubmit="return formSubmit();" >
 						<input type = "hidden" name="location" id="message_location"/>
 						<input type="hidden" name="id" id="message_id"/>
 						<input type="hidden" name="extra_kg" id="extra_kg"/>
-						<div class="form-group">
+						<div class="col-xs-12 col-sm-5">
+							<h2><span id="title_section4">Thanks</span> <span class='punctuation'>0</span> <span id="title_section5">help</span></h2>
+							<div class="graphic"><canvas id="myChart" width="150" height="150"></canvas></div>
+						</div>
+						<div class="col-xs-12 col-sm-7">
+							<h2><span id="">Dejanos tu mensaje</span></h2>
+							<p id="info_message" class="align-left dashedBott">Déjenos un mensaje en nuestro muro.<p>
+							<div class="form-group">
 							<label class="col-sm-2 control-label" id="name">name</label>
 							<div class="col-sm-10">
 								<input class="form-control" id="person_name" maxlength="255" name="nombre" type="text"/>
 							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label" id="message">message</label>
-							<div class="col-sm-10">
-								<textarea class="form-control" id="message_text" name="mensaje" rows="3" cols="40" ></textarea>
 							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-default"><span id="submit">send</span></button>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" id="message">message</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" id="message_text" name="mensaje" rows="3" cols="40" ></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-default"><span id="submit">send</span></button>
+								</div>
 							</div>
 						</div>
 					</form>
-					<div class="video-wrapper">
-						<iframe src="https://www.youtube.com/embed/ZkJpzTNeaZQ" frameborder="0" allowfullscreen></iframe>
+
+
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-10">
+							<div class="video-wrapper">
+								<iframe src="https://www.youtube.com/embed/ZkJpzTNeaZQ" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-2">
+							<h2><span id="share">share</span></h2>
+							<div class="share_butt"><a href='' class='twitter-intent'><img class='sn-logo' src='img/ico_twitter_w.png' /></a></div>
+							<div class="share_butt"><a href='' class='facebook-intent'><img class='sn-logo' src='img/ico_facebook_w.png' /></a></div>
+							<div class="share_butt"><a href='messages.php' class='messages-panel'><img class='sn-logo' src='img/ico_email_w.png' /></a></div>
+						</div>
 					</div>
-					<p id="share">share</p>
-					<p>
-						<a href='' class='twitter-intent'><img class='sn-logo' src='img/twitter.png' /></a>
-						<a href='' class='facebook-intent'><img class='sn-logo' src='img/facebook.png' /></a>
-						<a href='messages.php' class='messages-panel'><img class='sn-logo' src='img/mail.png' /></a>
-					</p>
 				</div>
 			</div>
 		</section>

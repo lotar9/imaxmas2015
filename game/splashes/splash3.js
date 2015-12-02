@@ -23,13 +23,8 @@ function create()
     button.scale.setTo(0.5,0.5);
     button.anchor.setTo(0.5,0.5);
 
-    var text2 = game.add.text(
-        0,
-        225,
-        World.getTrad('game.splash3Text'),
-        { fontSize: '42px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
-    );
-    text2.x = game.world.centerX - text2.width / 2;
+    World.addLevelTitle(3);
+    World.addHelp(3);
 
    	var enter = game.input.keyboard.addKey( Phaser.Keyboard.ENTER );
    	enter.onDown.add( World.goToLevel.bind( this, 'Level3' ) );

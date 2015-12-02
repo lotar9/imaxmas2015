@@ -3,7 +3,12 @@ var KG_MESSAGE = 20;
 $(function(){
 	$.scrollify({
 		section: '.panel',
-		offset: 0
+		offset: 0,
+		after:function(){
+			var panelId = $($.scrollify.current()).attr('scroll-panel');
+			$('.navbar-nav').children().removeClass('active');
+			$("a[scroll-panel='"+panelId+"']").parent().addClass('active');
+		}
 	});
 	getLocation();
 	getTotalKgObtained();
@@ -123,4 +128,8 @@ function getTotalKgObtained(){
 			var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
 		}
 	   });
+}
+
+function clickMenu(id,elem){
+	$.scrollify.move('#'+id);
 }

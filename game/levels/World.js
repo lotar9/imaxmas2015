@@ -12,6 +12,36 @@
         window.trads = {};
         this.loadTrads();
         this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO, "game_frame" );
+        this.finalScore = 0;
+        this.messageId = 0;
+    }
+
+    World.prototype.addLevelTitle = function(level){
+      var text = this.game.add.text(
+          0,
+          200,
+          this.getTrad('game.Level')+" "+level+":",
+          { font: '36px Monospace', fill: '#FF0' }
+      );
+
+      var text2 = this.game.add.text(
+          0,
+          200,
+          this.getTrad('game.splash'+level+'Text'),
+          { font: '36px Monospace', fill: '#FFF' }
+      );
+      text.x = (this.game.world.centerX - (text.width+text2.width) / 2);
+      text2.x = (this.game.world.centerX - (text.width+text2.width) / 2)+text.width;
+    }
+
+    World.prototype.addHelp = function(level){
+      var text3 = this.game.add.text(
+        820,
+        410,
+        this.getTrad('game.splash'+level+'Help'),
+        { font: '36px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:400 }
+      );
+      text3.anchor.set(0.5);
     }
 
 

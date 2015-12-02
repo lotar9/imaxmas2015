@@ -31,7 +31,7 @@ function create()
     var text2 = game.add.text(
         0,
         225,
-        World.getTrad('game.youDelivered') + World.totalScore + " Kg de ayuda ",
+        World.getTrad('game.youDelivered') + World.totalScore + " "+World.getTrad('game.kgHelp'),
         { fontSize: '42px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
     );
     text2.x = game.world.centerX - text2.width / 2;
