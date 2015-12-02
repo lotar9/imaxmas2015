@@ -60,7 +60,7 @@ heliGame.prototype = {
         },
         audio: {
             //flap: ['/music/level4/flap.wav'],
-            scoresound: ['game/music/level4/collect.mp3']
+            scoresound: ['game/music/level4/collect.mp3','game/music/level4/collect.ogg']
             //hurt: ['/music/level4/hurt.wav']
         }
     };
@@ -73,8 +73,8 @@ heliGame.prototype = {
     aldea = game.load.image("aldea" , "game/sprites/level4/04_aldea.png");
     package = game.load.image("package" , "game/sprites/level4/municion.gif");
     game.load.audio('base', ['game/music/level4/jungle_loop.mp3','game/music/level4/jungle_loop.ogg']);
-    game.load.audio('gameoversound', ['game/music/level4/game-over.mp3']);
-    game.load.audio('helicoptersound', ['game/music/level4/helicopter.mp3']);
+    game.load.audio('gameoversound', ['game/music/level4/game-over.mp3','game/music/level4/game-over.ogg']);
+    game.load.audio('helicoptersound', ['game/music/level4/helicopter.mp3','game/music/level4/helicopter.ogg']);
      },
      create: function(){
 
@@ -100,22 +100,22 @@ heliGame.prototype = {
     fingers = game.add.group();
     // Add invisible thingies
     invs = game.add.group();
-    fence = game.add.tileSprite(0, this.game.height - 32, this.game.width, 32, 'fence');
-    fence.tileScale.setTo(2, 2);
+    fence = game.add.tileSprite(0, game.height - 32, game.width, 32, 'fence');
+    fence.tileScale.setTo(0.5, 0.5);
     this.game.physics.enable(fence, Phaser.Physics.ARCADE);
-
+	fence.body.updateBounds(fence.scale.x, fence.scale.y);
     // Add score text
     scoreText = game.add.text(
         this.game.width / 2,
         this.game.height / 4,
-        ""
+        "",{font: "30px Monospace"}
     );
     scoreText.anchor.setTo(0.5, 0.5);
     // Add instructions text
     instText = game.add.text(
         this.game.width / 2,
         this.game.height - this.game.height / 4,
-        ""
+        "",{font: "30px Monospace"}
     );
     instText.anchor.setTo(0.5, 0.5);
     //Add game over text
@@ -167,7 +167,7 @@ heliGame.prototype = {
 					finish();
 				}
             }
-            if(game.physics.arcade.overlap(helicopter, fingers)){
+            if(game.physics.arcade.collide(helicopter, fingers)){
 				if(!gameFinish)
 					setGameOver();
             }
@@ -230,7 +230,8 @@ function flap() {
         start();
     }
     if (!gameOver) {
-        helicopter.body.velocity.y = -FLAP;
+		if(helicopter.body.y>0)
+			helicopter.body.velocity.y = -FLAP;
     }
 }
 function tirar () {
@@ -244,6 +245,7 @@ function tirar () {
     if(contador<=CREDITS){
 		municion = this.game.add.sprite(helicopter.x, helicopter.y, 'municion');
 		this.game.physics.enable(municion, Phaser.Physics.ARCADE);
+		municion.scale.setTo(0.5,0.5);
 		municion.body.velocity.setTo(20, 200);
 		municion.body.bounce.set(0.1);
 		municion.body.gravity.set(0, 100);
@@ -296,16 +298,18 @@ function spawnfinger() {
 
     finger = fingers.create(
         this.game.width,
-        this.game.height -100,
+        this.game.height,
         'finger'
     );
     this.game.physics.enable(finger, Phaser.Physics.ARCADE);
     finger.body.allowGravity = false;
     fingerYrandom =  game.rnd.integerInRange(0,1);
-	finger.scale.setTo(2,2);
 	//fingerY += (fingerYrandom ? -o() + game.rnd.integerInRange(0,100) : (o()) /4) + game.rnd.integerInRange(0,100) ;
-	finger.reset(this.game.width, (this.game.height - game.rnd.integerInRange(finger.body.height*2,finger.body.height -32)) );
-
+	finger.scale.setTo(0.3,0.3);
+	finger.body.width = finger.width;
+	finger.reset(this.game.width, (this.game.height - game.rnd.integerInRange(finger.body.halfHeight/3,finger.body.halfHeight/2)) );
+	finger.body.updateBounds(finger.scale.x, finger.scale.y);
+	finger.body.immovable = true;
     //aldea.body.offset.y = flipped ? -aldea.body.height * 0 : 0;
 
     // Move to the left
@@ -327,8 +331,9 @@ function spawnaldea() {
     );
     this.game.physics.enable(aldea, Phaser.Physics.ARCADE);
     aldea.body.allowGravity = false;
-	aldea.reset(this.game.width, this.game.height - aldea.body.height/2 - fence.body.height);
+	aldea.reset(this.game.width, this.game.height - aldea.body.halfHeight - fence.body.halfHeight);
     aldea.scale.setTo(0.5,0.5);
+    aldea.body.updateBounds(aldea.scale.x, aldea.scale.y);
     //aldea.body.offset.y = flipped ? -aldea.body.height * 0 : 0;
 
     // Move to the left
@@ -344,6 +349,18 @@ function initKeys4(){
 
      key2 = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
      key2.onDown.add(tirar);
+     game.input.onTap.add( function( event )
+     {
+       if( Math.floor( event.x / ( game.width / 2 ) ) === 0 )
+       {
+			tirar();
+       }
+
+       if( Math.floor( event.x / ( game.width / 2 ) ) === 1 )
+       {
+			flap();
+       }
+   });
 }
 
 
@@ -355,16 +372,18 @@ function initBackground4(){
 }
 
 function render() {
+	
     if (DEBUG) {
-        game.debug.renderSpriteBody(helicopter);
+        game.debug.body(helicopter);
+
         aldeas.forEachAlive(function(aldea) {
-            this.game.debug.renderSpriteBody(aldea);
+            this.game.debug.body(aldea);
         });
          fingers.forEachAlive(function(finger) {
-            this.game.debug.renderSpriteBody(finger);
+            this.game.debug.body(finger);
         });
         invs.forEach(function(inv) {
-            this.game.debug.renderSpriteBody(inv);
+            this.game.debug.body(inv);
         });
     }
 }

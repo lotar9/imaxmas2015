@@ -76,12 +76,25 @@ function formSubmit(){
 	var mensaje	= $('#message_text').val();
 	$('#extra_kg').val( KG_MESSAGE );
 
-	if ( nombre.length > 0 && mensaje.length > 0 ){
+	if ( nombre.length == 0 || mensaje.length == 0) {
+		if ( nombre.length == 0 ) {
+			$('#person_name').parents(':eq(1)').removeClass("has-success");
+			$('#person_name').parents(':eq(1)').addClass("has-error");
+		} else {
+			$('#person_name').parents(':eq(1)').removeClass("has-error");
+			$('#person_name').parents(':eq(1)').addClass("has-success");
+		}
+		if ( mensaje.length == 0 ) {
+			$('#message_text').parents(':eq(1)').removeClass("has-success");
+			$('#message_text').parents(':eq(1)').addClass("has-error");
+		} else {
+			$('#message_text').parents(':eq(1)').removeClass("has-error");
+			$('#message_text').parents(':eq(1)').addClass("has-success");
+		}
+		return false;
+	} else {
 		formulario.submit();
 		return true;
-	} else {
-		alert("Por favor rellena los dos campos");
-		return false;
 	}
 }
 
