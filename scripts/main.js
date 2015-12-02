@@ -17,6 +17,10 @@ $(function(){
 		}
 		$.scrollify.move("#4");
 	}
+	socialText = getTranslation('social_initial');
+	if(socialText != '') changeSocialLinks(socialText);
+	else changeSocialLinks('social');
+
 });
 
 function gup( name, url ) {
@@ -123,4 +127,9 @@ function getTotalKgObtained(){
 			var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
 		}
 	   });
+}
+
+function changeSocialLinks(newtext) {
+	$('.twitter-intent').attr('href','https://twitter.com/intent/tweet?text='+newtext+'&url=http://example.com');
+	$('.facebook-intent').attr('href','https://www.facebook.com/dialog/feed?app_id=&display=popup&caption='+newtext+'&link=http://example.com');
 }
