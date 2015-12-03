@@ -26,6 +26,7 @@ function create()
     World.addLevelTitle(2);
     World.addHelp(2);
 
+    /*
     var text = this.game.add.text(
       225,
       430,
@@ -33,6 +34,7 @@ function create()
       { font: '36px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:400 }
     );
     text.anchor.set(0.5);
+    */
 
     //text3.x = game.world.centerX - (text3.width /2);
    	var enter = game.input.keyboard.addKey( Phaser.Keyboard.ENTER );
