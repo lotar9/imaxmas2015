@@ -15,7 +15,11 @@ function getLangValue(){
 	}
 	tokens = navigator.language.split("-");
 	var lang = tokens[0].toUpperCase();
+	var country = tokens[0].toUpperCase();
 	if (lang != "ES" && lang != "PT"){
+		if (country == 'ES'){
+			return 'ES';
+		}
 		lang = "EN";
 	}
 	return lang;

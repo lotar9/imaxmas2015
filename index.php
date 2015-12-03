@@ -20,6 +20,10 @@
 		<script src="scripts/jquery.scrollify.min.js"></script>
 		<script type="text/javascript" src="scripts/main.js" ></script>
 		<script type="text/javascript" src="scripts/language.js" ></script>
+		<script type="text/javascript">
+			var punctuation = parseInt("<?= $_POST['punctuation']?>");
+			var message_id = parseInt("<?= $_POST['message_id']?>");
+		</script>
 	</head>
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">

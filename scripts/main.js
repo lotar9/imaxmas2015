@@ -1,6 +1,9 @@
 var KG_GOAL = 50000;
 var KG_MESSAGE = 20;
 $(function(){
+	getLocation();
+	getTotalKgObtained();
+	setupDefaultLanguage();
 	$.scrollify({
 		section: '.panel',
 		offset: 0,
@@ -10,14 +13,11 @@ $(function(){
 			$("a[scroll-panel='"+panelId+"']").parent().addClass('active');
 		}
 	});
-	getLocation();
-	getTotalKgObtained();
-	setupDefaultLanguage();
-	p = gup('punctuation',document.location);
-	v = gup('message_id',document.location);
-	if (p != null && p != ''){
+	p = punctuation;
+	v = message_id;
+	if (p > 0 ){
 		$('.punctuation').html(p);
-		if (v != null && v != ''){
+		if (v > 0){
 			$('#message_id').val(v);
 		}
 		$.scrollify.move("#4");
@@ -46,38 +46,7 @@ function getLocation(){
 		);
 	}
 }
-var data = [
-        {
-                value: 0,
-                color:"#F7464A",
-                highlight: "#FF5A5E",
-                label: "Red"
-        },
-        {
-                value: 0,
-                color: "#46BFBD",
-                highlight: "#5AD3D1",
-                label: "Green"
-        },
-];
-var options = {
-        //Boolean - Whether we should show a stroke on each segment
-        segmentShowStroke : true,
-        //String - The colour of each segment stroke
-        segmentStrokeColor : "#fff",
-        //Number - The width of each segment stroke
-        segmentStrokeWidth : 2,
-        //Number - The percentage of the chart that we cut out of the middle
-        percentageInnerCutout : 50, // This is 0 for Pie charts
-        //Number - Amount of animation steps
-        animationSteps : 150,
-        //String - Animation easing effect
-        animationEasing : "easeOutElastic",
-        //Boolean - Whether we animate the rotation of the Doughnut
-        animateRotate : true,
-        //Boolean - Whether we animate scaling the Doughnut from the centre
-        animateScale : false,
-};
+
 
 function formSubmit(){
 	var formulario	= $('#formulario');
@@ -106,8 +75,40 @@ function formSubmit(){
 		return true;
 	}
 }
-
+var data = [
+		{
+				value: 0,
+				color:"#F7464A",
+				highlight: "#FF5A5E",
+				label: "Red"
+		},
+		{
+				value: 0,
+				color: "#46BFBD",
+				highlight: "#5AD3D1",
+				label: "Green"
+		},
+];
+var options = {
+		//Boolean - Whether we should show a stroke on each segment
+		segmentShowStroke : true,
+		//String - The colour of each segment stroke
+		segmentStrokeColor : "#fff",
+		//Number - The width of each segment stroke
+		segmentStrokeWidth : 2,
+		//Number - The percentage of the chart that we cut out of the middle
+		percentageInnerCutout : 50, // This is 0 for Pie charts
+		//Number - Amount of animation steps
+		animationSteps : 150,
+		//String - Animation easing effect
+		animationEasing : "easeOutElastic",
+		//Boolean - Whether we animate the rotation of the Doughnut
+		animateRotate : true,
+		//Boolean - Whether we animate scaling the Doughnut from the centre
+		animateScale : false,
+};
 function getTotalKgObtained(){
+
 	$.ajax({
 		type: "POST",
 		url: "functions.php",
@@ -122,16 +123,20 @@ function getTotalKgObtained(){
 				data[0].value = 0;
 				data[1].value = KG_GOAL;
 			}
-			var ctx = document.getElementById("myChart").getContext("2d");
-			var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
+			repaintDoughnut(true);
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown){
 			data[0].value = 0;
 			data[1].value = KG_GOAL;
-			var ctx = document.getElementById("myChart").getContext("2d");
-			var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
+			repaintDoughnut(true);
 		}
 	   });
+}
+
+function repaintDoughnut(first){
+	var ctx = document.getElementById("myChart").getContext("2d");
+	//$(ctx).html('');
+	var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
 }
 
 function clickMenu(id,elem){
