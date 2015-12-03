@@ -38,7 +38,7 @@
 						<li><a scroll-panel="3" id="MenuGame" onclick="clickMenu(3,this)">Game</a></li>
 						<li><a scroll-panel="4" id="MenuThanks" onclick="clickMenu(4,this)">Thanks</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="language">Language</span> <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a id="ES" onclick="changeLan(this.id)">ES</a></li>
 								<li><a id="EN" onclick="changeLan(this.id)">EN</a></li>
@@ -54,7 +54,7 @@
 				<h1 class="logo_main"><img class="img-responsive" src="img/logo_xl.png"></h1>
 				<!-- <h1 id="titleXmas">XMAS IMAWEB 2015</h1> -->
 				<div class="welcome" id="welcome">
-					Bienvenidos a "Route to Praia de Xai-Xai". Gracias por participar y así poder ayudar a la funcación KHANIMAMBO y todo los chicos a los que llegan.
+					welcome
 				</div>
 				<div><span class="about">Imaweb 2000 S.L</span></div>
 			</div>
@@ -62,7 +62,7 @@
 
 		<section class="panel explanation" scroll-panel="2">
 			<div class="inner">
-				<h2><span id="">Rules</span></h2>
+				<h2><span id="rules">rules</span></h2>
 				<div id="carousel-levels" class="carousel slide" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -128,10 +128,10 @@
 		<section class="panel game" scroll-panel="3">
 			<div class="inner">
 				<div class="middle">
-				<h2><span id="">Game</span></h2>
+				<h2><span id="play">play</span></h2>
 					<div class="ratio-wrapper">
 						<div class="ratio-wrapper-content">
-							<a href="game.html" class="play">start<!-- <img class="play_button" src="game/sprites/shared/play_button.png"> --></a>
+							<a href="game.html" class="play" id="start">start<!-- <img class="play_button" src="game/sprites/shared/play_button.png"> --></a>
 						</div>
 					</div>
 				</div>
@@ -150,7 +150,7 @@
 							<div class="graphic"><canvas id="myChart" width="150" height="150"></canvas></div>
 						</div>
 						<div class="col-xs-12 col-sm-7">
-							<h2><span id="">Dejanos tu mensaje</span></h2>
+							<h2><span id="leave_your_messasge">leave_your_messasge</span></h2>
 							<p id="info_message" class="align-left dashedBott">Déjenos un mensaje en nuestro muro.<p>
 							<div class="form-group">
 							<label class="col-sm-2 control-label" id="name">name</label>

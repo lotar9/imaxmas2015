@@ -39,7 +39,7 @@
         820,
         410,
         this.getTrad('game.splash'+level+'Help'),
-        { font: '36px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:400 }
+        { font: '30px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:400 }
       );
       text3.anchor.set(0.5);
     }
