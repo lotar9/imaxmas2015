@@ -1,9 +1,9 @@
 <?php
-if ( $_POST['get_kg_obtained']){
+if ( isset( $_POST['get_kg_obtained']) ){
 	echo json_encode( array("status"=>"OK","value"=>getKgObtained()));
 	exit;
 }
-if ( $_POST['score'] ){
+if ( isset( $_POST['score'] ) ){
 	$conn = getConn();
 	if(!$conn->query( sprintf(
 			"insert into messages (location,help_amount,creation_date,province) values ('%s',%s,'%s','%s')",
@@ -24,7 +24,7 @@ if ( $_POST['score'] ){
 
 }
 
-if ( $_POST['nombre'] && $_POST['mensaje'] ) {
+if ( isset( $_POST['nombre'] ) && isset( $_POST['mensaje'] ) ) {
 	$conn = getConn();
 	if ($_POST['id']){
 		if(!$conn->query( sprintf(
@@ -76,7 +76,7 @@ function getConn(){
 }
 
 function getLocation(){
-	if ($_POST['location'] !== ''){
+	if ( isset( $_POST['location'] ) && $_POST['location'] !== ''){
 		return $_POST['location'];
 	}
 	return '';

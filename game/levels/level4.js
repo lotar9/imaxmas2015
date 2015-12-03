@@ -400,7 +400,7 @@ function reset() {
     contador = 0;
     gameFinish = false;
     scoreText.setText(World.getTrad("game.level4Start"));
-    instText.setText("game.level4PushUp");
+    instText.setText(World.getTrad("game.level4PushUp"));
     instText.renderable=true;
     helicopter.body.angle.y = 500;
     helicopter.reset((this.game.width * World.scaleCoef)/2, this.game.height * World.scaleCoef);

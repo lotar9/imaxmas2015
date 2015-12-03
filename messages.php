@@ -18,14 +18,14 @@ include ('functions.php');
 		<script type="text/javascript">
 		$(function(){
 			setupDefaultLanguage();
-		}
+		});
 		</script>
 	</head>
 	<body>
 		<section class="scores">
 			<div class="inner">
 				<div class="middle">
-					<h2>PUNTUACIONES</h2>
+					<h2 id="scores">scores</h2>
 					<table class="puntuaciones">
 						<tr><th id="name">NOMBRE</th><th id="message">MENSAJE</th><th id="score">PUNTUACION</th><th id="location">LOCATION</th></tr>
 						<?php
