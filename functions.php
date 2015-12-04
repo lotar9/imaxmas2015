@@ -72,7 +72,7 @@ function listScores() {
 
 
 function getConn(){
-	return $mysqli = new mysqli('localhost', 'imaweb', 'pepito','imaxmas2015');
+	return $mysqli = new mysqli('mantenimiento', 'crmauto', 'crmauto','imaxmas2015');
 }
 
 function getLocation(){
