@@ -2,8 +2,8 @@ var KG_GOAL = 50000;
 var KG_MESSAGE = 20;
 $(function(){
 	getLocation();
-	getTotalKgObtained();
 	setupDefaultLanguage();
+	getTotalKgObtained();
 	$.scrollify({
 		section: '.panel',
 		offset: 0,
@@ -80,13 +80,13 @@ var data = [
 				value: 0,
 				color:"#F7464A",
 				highlight: "#FF5A5E",
-				label: "Red"
+				label: "collected"
 		},
 		{
 				value: 0,
 				color: "#46BFBD",
 				highlight: "#5AD3D1",
-				label: "Green"
+				label: "remaining"
 		},
 ];
 var options = {
@@ -134,6 +134,8 @@ function getTotalKgObtained(){
 }
 
 function repaintDoughnut(first){
+	data[0].label = getTranslation('graphic.collected');
+	data[1].label = getTranslation('graphic.remaining');
 	var ctx = document.getElementById("myChart").getContext("2d");
 	//$(ctx).html('');
 	var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
@@ -143,6 +145,7 @@ function clickMenu(id,elem){
 	$.scrollify.move('#'+id);
 }
 function changeSocialLinks(newtext) {
+
 	$('.twitter-intent').attr('href','https://twitter.com/intent/tweet?text='+newtext+'&url=http://example.com');
 	$('.facebook-intent').attr('href','https://www.facebook.com/dialog/feed?app_id=&display=popup&caption='+newtext+'&link=http://example.com');
 }

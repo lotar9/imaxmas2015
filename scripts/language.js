@@ -33,20 +33,26 @@ function changeLan(lan) {
 						$('#'+id).html(trad);
 					}
                 });
-            });
+            }).error(function(){
+				alert("Error en JSON");
+			});
 	document.cookie="language="+lan;
-	$("#gameIframe").attr('src','game.html?lan='+lan);
 }
 
 function getTranslation(key) {
-	console.log("Obteniendo traduccion de "+key);
 	lan = getLangValue();
-	$.getJSON("trads.txt", function(data) {
-		$.each(data[lan], function(id,trad) {
-			if (id.indexOf(key) != -1){
-				return trad;
-			}
-		});
+	var tradFinal = key;
+	$.ajax({
+		url: "trads.txt",
+		dataType: 'json',
+		async: false,
+		success: function(data) {
+			$.each(data[lan], function(id,trad) {
+				if (id.indexOf(key) == 0){
+					tradFinal = trad;
+				}
+			});
+		}
 	});
-	return "";
+	return tradFinal;
 }
