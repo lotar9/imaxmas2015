@@ -78,14 +78,14 @@ function formSubmit(){
 var data = [
 		{
 				value: 0,
-				color:"#F7464A",
-				highlight: "#FF5A5E",
+				color:"#a01127",
+				highlight: "#651127",
 				label: "collected"
 		},
 		{
 				value: 0,
-				color: "#46BFBD",
-				highlight: "#5AD3D1",
+				color: "green",
+				highlight: "#08330e",
 				label: "remaining"
 		},
 ];
@@ -93,7 +93,7 @@ var options = {
 		//Boolean - Whether we should show a stroke on each segment
 		segmentShowStroke : true,
 		//String - The colour of each segment stroke
-		segmentStrokeColor : "#fff",
+		segmentStrokeColor : "#ddd",
 		//Number - The width of each segment stroke
 		segmentStrokeWidth : 2,
 		//Number - The percentage of the chart that we cut out of the middle

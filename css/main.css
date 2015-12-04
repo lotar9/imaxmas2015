@@ -58,17 +58,27 @@ div.middle {
 }
 
 .about {
+  width: 100%;
   position: absolute;
   bottom: 20px;
+}
+
+.about img,
+.iw_logo img {
+  width: 237px;
+}
+
+.iw_logo {
+  margin: 20px 0;
 }
 
 p.about{
   left: 10px;
 }
 
-div.about {
+/*div.about {
   right: 10px;
-}
+}*/
 
 p.language {
   position: absolute;
@@ -231,16 +241,15 @@ div.ratio-wrapper-content {
   width: 80px;
   margin-top: -5px;
 }
-.logo_main {
-  /*margin-top: 65px;*/
+.flag {
+  width: 20px;
 }
 .logo_main img {
   width: 400px;
   display: initial;
 }
 .welcome {
-  font-size: 1.5em;
-  font-style: italic;
+  font-size: 1.2em;
   text-align: center;
   width: 100%;
   border-top: 1px solid #380e1d;
@@ -248,20 +257,26 @@ div.ratio-wrapper-content {
   margin: 40px 0;
 }
 .inner h2,
-.middle h2{
-  font-size: 1.8em;
+.middle h2 {
+  font-size: 1.5em;
   text-align: left;
   text-transform: uppercase;
-  height: 40px;
+  min-height: 40px;
   border-bottom: 1px dashed #999;
   padding-bottom: 5px;
 }
-.middle h2 .punctuation {
+
+.graphic_txt {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  padding-top: 55px;
+}
+
+.graphic_txt .punctuation {
   color: #bd114f;
   font-size: 1.6em;
-  margin-top: -10px;
-  vertical-align: top;
-  display: inline-block;
 }
 .carousel-control.left,
 .carousel-control.right {
@@ -310,6 +325,11 @@ div.ratio-wrapper-content {
   text-align: left !important;
   text-transform: uppercase;
 }
+.form-horizontal textarea, .form-horizontal input {
+  font-size: 12px;
+  border-radius: 0px;
+  padding: 6px 6px;
+}
 .form-horizontal .btn-default {
   color: #fff;
   text-transform: uppercase;
@@ -317,6 +337,7 @@ div.ratio-wrapper-content {
   height: 40px;
   background-color: #F95900;
   border: none;
+  border-radius: 0px;
 }
 .form-horizontal .btn-default:hover,
 .form-horizontal .btn-default:focus,
@@ -326,7 +347,9 @@ div.ratio-wrapper-content {
   background-color: #651127;
 }
 .share_butt {
+  text-align: left;
   margin: 20px 5px;
+  display: initial;
 }
 
 @media(max-width:1024px) {
@@ -347,8 +370,5 @@ div.ratio-wrapper-content {
   }
   .play {
     font-size: 2em;
-  }
-  .share_butt {
-    display: initial;
   }
 }
