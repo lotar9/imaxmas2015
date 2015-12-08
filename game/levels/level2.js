@@ -352,7 +352,7 @@ function initSounds(){
      boatSound.play();
 
      music = game.add.audio('music');
-     music.play();
+     music.loopFull(1);
 
      whaleSound = game.add.audio('whaleSound');
      //whaleSound.volume += 0.5;

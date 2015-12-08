@@ -47,7 +47,7 @@
 
         // Init music
         this.themeSong = this.game.add.audio( 'themeSong' );
-        this.themeSong.play();
+        this.themeSong.loopFull(1);
 
         // Load Background
         this.loadBackground();
