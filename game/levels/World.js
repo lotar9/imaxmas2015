@@ -21,15 +21,15 @@
       var text = this.game.add.text(
           0,
           200,
-          this.getTrad('game.Level')+" "+level+":",
+          this.getTrad('game.Level')+" "+level+": ",
           { font: '36px Monospace', fill: '#FFF' }
       );
 
       var text2 = this.game.add.text(
           0,
           200,
-          this.getTrad('game.splash'+level+'Text') ,
-          { font: '36px Monospace', fill: '#FF0' }
+          '"'+this.getTrad('game.splash'+level+'Text')+'"' ,
+          { font: '36px Monospace', fill: '#FF8100' }
       );
       text.x = (this.game.world.centerX - (text.width+text2.width) / 2);
       text2.x = (this.game.world.centerX - (text.width+text2.width) / 2)+text.width;

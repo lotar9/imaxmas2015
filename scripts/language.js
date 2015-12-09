@@ -37,6 +37,13 @@ function changeLan(lan) {
 				alert("Error en JSON");
 			});
 	document.cookie="language="+lan;
+	changeNavBarLanguage(lan);
+}
+
+function changeNavBarLanguage(lan){
+ $('#lang-dropdown-nav').html(
+	 "<img class='flag' src='img/flag_"+lan.toLowerCase()+".png'> - "+lan+"</a> <span class='caret'></span>"
+ );
 }
 
 function getTranslation(key) {

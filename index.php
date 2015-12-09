@@ -33,7 +33,7 @@
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html"><img class="logo_top" src="img/logo_xl.png"></a>
+					<a class="navbar-brand" href="index.php"><img class="logo_top" src="img/logo_xl.png"></a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-6">
 					<ul class="nav navbar-nav">
@@ -42,8 +42,10 @@
 						<li><a scroll-panel="3" id="MenuGame" onclick="clickMenu(3,this)">Game</a></li>
 						<li><a scroll-panel="4" id="MenuThanks" onclick="clickMenu(4,this)">Thanks</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="language">Language</span> <span class="caret"></span></a>
-							<ul class="dropdown-menu">
+							<a id="lang-dropdown-nav" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<span id="language">Language</span> <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" id="lang-dropdown-menu">
 								<li><a id="ES" onclick="changeLan(this.id)"><img class="flag" src="img/flag_es.png"> - ES </a></li>
 								<li><a id="EN" onclick="changeLan(this.id)"><img class="flag" src="img/flag_en.png"> - EN </a></li>
 								<li><a id="PT" onclick="changeLan(this.id)"><img class="flag" src="img/flag_pt.png"> - PT </a></li>
