@@ -205,8 +205,8 @@
 			</div>
 		</section>
 		<div class="cookiesms" id="cookie1">
-			Este sitio usa cookies, al pinchar aceptas su uso.  
-			<button onclick="controlcookies()" class="button_cook">Aceptar</button>
+			<span id="cookieText">CookieText</span>
+			<button onclick="controlcookies()" class="button_cook">OK</button>
 			<div class="cookies2">COOKIES</div>
 		</div>
 		<script type="text/javascript">

@@ -16,7 +16,7 @@
 		"location":"Provincia",
 		"info_message" : "Si dejas un mensaje se donaran 20 Kgs más",
 		"title_section4" : "GRACIAS POR PARTICIPAR! HAS RECOLECTADO",
-		"title_section5" : "KGS. DE AYUDA",
+		"title_section5" : "KGS.",
 		"share":"Compártelo con tus conocidos!",
 		"carousel-0":"ROAD to PRAIA XAI-XAI es un juego de 4 pantallas en las que tendrás que conseguir medicinas y libros y hacerlas llegar a la Fundación Khanimambo. En cada pantalla debes superar ciertos retos durante 30 segundos hasta llegar a la última pantalla, situada en Praia de Xai-Xai, para entregar los objetos recolectados.",
 		"carousel-1":"Recopila toda la ayuda posible que cae del cielo: material médico y libros. ¡Pero cuidado! Algún vecino desalmado nos está tirando macetas y esas no nos sirven, en Mozambique ya tienen bastante vegetación.",
@@ -42,7 +42,8 @@
 		"game.youDelivered" : "Conseguiste entregar ",
 		"game.kgHelp" : " Kgs.",
 		"graphic.collected": "Kgs. Recolectados",
-		"graphic.remaining": "Kgs. Faltantes"
+		"graphic.remaining": "Kgs. Faltantes",
+		"cookieText": "Este sitio usa cookies, al pinchar aceptas su uso."
 
 	},
 	"EN":{

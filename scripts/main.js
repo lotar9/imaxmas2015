@@ -90,6 +90,7 @@ var data = [
 		},
 ];
 var options = {
+		tooltipFontSize: 11,
 		//Boolean - Whether we should show a stroke on each segment
 		segmentShowStroke : true,
 		//String - The colour of each segment stroke
