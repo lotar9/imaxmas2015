@@ -67,7 +67,7 @@
 		<section class="panel explanation" scroll-panel="2">
 			<div class="inner">
 				<h2><span id="rules">rules</span></h2>
-				<div id="carousel-levels" class="carousel slide" data-ride="carousel">
+				<div id="carousel-levels" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
 						<li data-target="#carousel-levels" data-slide-to="0" class="active"></li>
