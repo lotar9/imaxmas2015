@@ -53,7 +53,7 @@ heliGame.prototype = {
      preload: function(){
           var assets = {
         image: {
-        	background: ["game/sprites/level4/04_fondo.png"],
+        	background: ["game/sprites/level4/04_fondo2048.png"],
             fence: ['game/sprites/level4/fence.png'],
             finger: ['game/sprites/level4/Arbol.png']
         },
