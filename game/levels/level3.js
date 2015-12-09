@@ -136,10 +136,10 @@
             }, this );
 
             // Add Clouds
-            if( this.game.rnd.between( 0, 300 ) > 298 )
+            /*if( this.game.rnd.between( 0, 300 ) > 298 )
             {
                 this.cloudsGroup.add( new Cloud( this ) );
-            }
+            }*/
         }
 
         // Car blink
