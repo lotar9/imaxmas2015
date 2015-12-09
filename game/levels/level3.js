@@ -18,7 +18,7 @@
     GameContext.prototype.preload = function()
     {
         this.game.load.image( "background", "game/sprites/level3/03_fondo-01.png" );
-        this.game.load.image( "road", "game/sprites/level3/03_camino-loop.png" );
+        this.game.load.image( "road", "game/sprites/level2/02_boya.png" );
         this.game.load.image( "car", "game/sprites/level3/03_coche.png" );
         this.game.load.image( "camels", "game/sprites/level3/03_camellos.png" );
         this.game.load.image( "rocks", "game/sprites/level3/03_rocas.png" );
@@ -48,7 +48,7 @@
         this.game.cache.removeSound( 'themeSong' );
         this.game.cache.removeSound( 'targetSound' );
     }
-    
+
     GameContext.prototype.create = function()
     {
         // Start physics
