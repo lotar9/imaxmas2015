@@ -117,7 +117,7 @@
             this.x,
             this.y,
             this.total  + ' ',
-            { fontSize: '32px', fill: '#FFF', stroke: '#000' }
+            { fontSize: '32px', fill: '#FFF'  }
         );
     }
 
@@ -167,7 +167,7 @@
             this.x,
             this.y,
             this.remaining + ' ',
-            { fontSize: '52px', fill: '#FFF', stroke: '#000' }
+            { fontSize: '52px', fill: '#FFF' }
         );
     }
 

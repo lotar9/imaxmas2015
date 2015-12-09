@@ -298,7 +298,7 @@ function drawPackages()
         80,
         12,
         World.totalScore / 10 + " ",
-        { fontSize: '28px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
+        { fontSize: '28px', fill: '#FFF'  }
     );
 }
 
