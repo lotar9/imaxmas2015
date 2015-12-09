@@ -4,7 +4,7 @@ include ('functions.php');
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="iso-8859-15">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 		<title>Road to Xai-Xai | Imaweb | 2015</title>
@@ -41,10 +41,10 @@ include ('functions.php');
 							$results = listScores();
 							while($row = $results->fetch_object()){
 								echo "<tr class='fila0'>";
-							    echo "<td class='align-left'>".$row->person_name."</td>";
-							    echo "<td class='align-left'>".$row->message."</td>";
+							    echo "<td class='align-left'>".utf8_decode($row->person_name)."</td>";
+							    echo "<td class='align-left'>".utf8_decode($row->message)."</td>";
 							    echo "<td class='t_pts_prov'>".$row->help_amount."</td>";
-							    echo "<td class='t_pts_prov'>".$row->province."</td>";
+							    echo "<td class='t_pts_prov'>".utf8_decode($row->province)."</td>";
 							    echo "</tr>";
 							}
 						?>

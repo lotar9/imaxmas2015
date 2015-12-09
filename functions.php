@@ -76,8 +76,8 @@ function getConn(){
 }
 
 function getLocation(){
-	if ( isset( $_POST['location'] ) && $_POST['location'] !== ''){
-		return $_POST['location'];
+	if ( isset( $_COOKIE['location'] ) && $_COOKIE['location'] !== ''){
+		return $_COOKIE['location'];
 	}
 	return '';
 }

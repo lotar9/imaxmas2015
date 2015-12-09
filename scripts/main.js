@@ -38,10 +38,29 @@ function gup( name, url ) {
 }
 
 function getLocation(){
+	c = document.cookie.split('; ');
+	cookies = {};
+
+	for(i=c.length-1; i>=0; i--){
+		 C = c[i].split('=');
+		 cookies[C[0]] = C[1];
+	}
+	if (cookies['location'] && cookies['location_expires']){
+		var locExpDate = new Date( cookies['location_expires']);
+		var expDate = new Date();
+		if (locExpDate.getTime() > expDate.getTime()){
+			return;
+		}
+	}
+
+
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(
 			function (position){
-				$('#message_location').val(position.coords.latitude +','+position.coords.longitude);
+				var d = new Date();
+				d.setDate( d.getDate() +1);
+				document.cookie="location="+position.coords.latitude +','+position.coords.longitude;
+				document.cookie="location_expires="+d;
 			}
 		);
 	}

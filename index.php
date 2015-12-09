@@ -149,7 +149,6 @@
 				<div class="middle">
 					<div class="row">
 						<form class="form-horizontal" id="formulario" method="POST" action="functions.php" onsubmit="return formSubmit();" >
-							<input type = "hidden" name="location" id="message_location"/>
 							<input type="hidden" name="id" id="message_id"/>
 							<input type="hidden" name="extra_kg" id="extra_kg"/>
 							<div class="col-xs-12 col-sm-6">

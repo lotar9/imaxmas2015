@@ -33,8 +33,8 @@ function changeLan(lan) {
 						$('#'+id).html(trad);
 					}
                 });
-            }).error(function(){
-				alert("Error en JSON");
+            }).error(function(data){
+				alert("Error JSON");
 			});
 	document.cookie="language="+lan;
 	changeNavBarLanguage(lan);
