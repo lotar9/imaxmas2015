@@ -33,11 +33,7 @@ var nivel1 = {
 
 		shutdown: function()
 		{
-			this.audioCollect.destroy();
-		    this.audioError.destroy();
-		    this.audioMusic.destroy();
-
-		    this.game.cache.removeImage( 'player' );
+			this.game.cache.removeImage( 'player' );
 			this.game.cache.removeImage( 'background' );
 			this.game.cache.removeImage( 'eat' );
 			this.game.cache.removeImage( 'medicine' );
