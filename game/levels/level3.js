@@ -33,7 +33,22 @@
             [ 'game/music/level3/target_sound.mp3', 'game/music/level3/target_sound.ogg' ]
         );
     }
+    
+    GameContext.prototype.shutdown = function()
+    {
+        this.game.cache.removeImage( "background" );
+        this.game.cache.removeImage( "road" );
+        this.game.cache.removeImage( "car" );
+        this.game.cache.removeImage( "camels" );
+        this.game.cache.removeImage( "rocks" );
+        this.game.cache.removeImage( "palm" );
+        this.game.cache.removeImage( "gas" );
+        this.game.cache.removeImage( "cloud" );
 
+        this.game.cache.removeSound( 'themeSong' );
+        this.game.cache.removeSound( 'targetSound' );
+    }
+    
     GameContext.prototype.create = function()
     {
         // Start physics

@@ -135,6 +135,16 @@ heliGame.prototype = {
 		reset();
 
      },
+     shutdown: function()
+     {
+        game.cache.removeImage("helicopter" );
+        game.cache.removeImage("muni" );
+        game.cache.removeImage("aldea" );
+        game.cache.removeImage("package" );
+        game.cache.removeSound('base' );
+        game.cache.removeSound('gameoversound' );
+        game.cache.removeSound('helicoptersound' );
+     },
      update: function(){
 		 if (gameStarted) {
 

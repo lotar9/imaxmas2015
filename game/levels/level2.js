@@ -89,6 +89,20 @@ playGame.prototype = {
                addStar();
           });*/
      },
+     shutdown: function()
+     {
+          game.cache.removeImage("ship");
+          game.cache.removeImage("boya");
+          game.cache.removeImage("faro");
+          game.cache.removeImage("tortugas");
+          game.cache.removeImage("whale");
+          game.cache.removeImage("whale_r");
+          game.cache.removeImage('starfield');
+          game.cache.removeSound('music');
+          game.cache.removeSound('boatSound');
+          game.cache.removeSound('whaleSound');
+          game.cache.removeSound('boatMoveSound');
+     },
      update: function(){
 
           starfield.tilePosition.y += 2;

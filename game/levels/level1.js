@@ -31,6 +31,23 @@ var nivel1 = {
 
 		},
 
+		shutdown: function()
+		{
+			this.audioCollect.destroy();
+		    this.audioError.destroy();
+		    this.audioMusic.destroy();
+
+		    this.game.cache.removeImage( 'player' );
+			this.game.cache.removeImage( 'background' );
+			this.game.cache.removeImage( 'eat' );
+			this.game.cache.removeImage( 'medicine' );
+			this.game.cache.removeImage( 'book' );
+			this.game.cache.removeImage( 'stone' );
+			this.game.cache.removeSound( 'collect' );
+			this.game.cache.removeSound( 'errorCollect' );
+          	this.game.cache.removeSound( 'music' );
+		},
+
 		create: function () {
 
 			this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -156,7 +173,7 @@ var nivel1 = {
 		    }
 
 		},
-
+		
 		selectItem: function (){
 			var rnd = Math.round(Math.random() * 3);
 			switch (rnd){
