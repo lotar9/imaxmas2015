@@ -2,8 +2,8 @@ var KG_GOAL = 50000;
 var KG_MESSAGE = 20;
 $(function(){
 	getLocation();
-	getTotalKgObtained();
 	setupDefaultLanguage();
+	getTotalKgObtained();
 	$.scrollify({
 		section: '.panel',
 		offset: 0,
@@ -38,10 +38,29 @@ function gup( name, url ) {
 }
 
 function getLocation(){
+	c = document.cookie.split('; ');
+	cookies = {};
+
+	for(i=c.length-1; i>=0; i--){
+		 C = c[i].split('=');
+		 cookies[C[0]] = C[1];
+	}
+	if (cookies['location'] && cookies['location_expires']){
+		var locExpDate = new Date( cookies['location_expires']);
+		var expDate = new Date();
+		if (locExpDate.getTime() > expDate.getTime()){
+			return;
+		}
+	}
+
+
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(
 			function (position){
-				$('#message_location').val(position.coords.latitude +','+position.coords.longitude);
+				var d = new Date();
+				d.setDate( d.getDate() +1);
+				document.cookie="location="+position.coords.latitude +','+position.coords.longitude;
+				document.cookie="location_expires="+d;
 			}
 		);
 	}
@@ -78,22 +97,23 @@ function formSubmit(){
 var data = [
 		{
 				value: 0,
-				color:"#F7464A",
-				highlight: "#FF5A5E",
-				label: "Red"
+				color:"#a01127",
+				highlight: "#651127",
+				label: "collected"
 		},
 		{
 				value: 0,
-				color: "#46BFBD",
-				highlight: "#5AD3D1",
-				label: "Green"
+				color: "green",
+				highlight: "#08330e",
+				label: "remaining"
 		},
 ];
 var options = {
+		tooltipFontSize: 11,
 		//Boolean - Whether we should show a stroke on each segment
 		segmentShowStroke : true,
 		//String - The colour of each segment stroke
-		segmentStrokeColor : "#fff",
+		segmentStrokeColor : "#ddd",
 		//Number - The width of each segment stroke
 		segmentStrokeWidth : 2,
 		//Number - The percentage of the chart that we cut out of the middle
@@ -134,6 +154,8 @@ function getTotalKgObtained(){
 }
 
 function repaintDoughnut(first){
+	data[0].label = getTranslation('graphic.collected');
+	data[1].label = getTranslation('graphic.remaining');
 	var ctx = document.getElementById("myChart").getContext("2d");
 	//$(ctx).html('');
 	var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
@@ -143,6 +165,7 @@ function clickMenu(id,elem){
 	$.scrollify.move('#'+id);
 }
 function changeSocialLinks(newtext) {
+
 	$('.twitter-intent').attr('href','https://twitter.com/intent/tweet?text='+newtext+'&url=http://example.com');
 	$('.facebook-intent').attr('href','https://www.facebook.com/dialog/feed?app_id=&display=popup&caption='+newtext+'&link=http://example.com');
 }

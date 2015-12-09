@@ -58,17 +58,27 @@ div.middle {
 }
 
 .about {
+  width: 80%;
   position: absolute;
   bottom: 20px;
+}
+
+.about img,
+.iw_logo img {
+  width: 237px;
+}
+
+.iw_logo {
+  margin: 20px 0;
 }
 
 p.about{
   left: 10px;
 }
 
-div.about {
+/*div.about {
   right: 10px;
-}
+}*/
 
 p.language {
   position: absolute;
@@ -102,8 +112,37 @@ a.messages-panel img.sn-logo {
 a.youtube-video img.sn-logo {
   width: 35px;
 }
+.puntuaciones th, .puntuaciones td{
+  font-size: 0.9em;
+  height: 35px;
+  padding: 0 5px;
+}
+
+table.puntuaciones {
+  border-bottom: 1px solid #13050a;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.puntuaciones th{
+  text-transform: uppercase;
+  background-color: #13050a;
+}
+
 .puntuaciones td{
-  width: 30%;
+  width: 40%;
+}
+
+.puntuaciones td.t_pts_prov{
+  width: 10%;
+}
+
+.fila0:nth-child(even) {
+  background-color: #463239;
+}
+
+.fila0:nth-child(odd) {
+  background-color: transparent;
 }
 
 .language span {
@@ -120,7 +159,7 @@ div.ratio-wrapper {
 div.ratio-wrapper-content {
   width: 100%;
   height: 100%;
-  background-image: url('img/initial.png');
+  background-image: url('../img/initial.png');
   background-repeat: no-repeat;
   background-size: cover;
   border:10px solid #fff;
@@ -180,8 +219,23 @@ div.ratio-wrapper-content {
 }
 
 /*JP*/
+.uppercase {
+  text-transform: uppercase;
+}
 .align-left {
   text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
 }
 .dashedBott{
   border-bottom: 1px dashed #999;
@@ -231,16 +285,15 @@ div.ratio-wrapper-content {
   width: 80px;
   margin-top: -5px;
 }
-.logo_main {
-  /*margin-top: 65px;*/
+.flag {
+  width: 20px;
 }
 .logo_main img {
   width: 400px;
   display: initial;
 }
 .welcome {
-  font-size: 1.5em;
-  font-style: italic;
+  font-size: 1.2em;
   text-align: center;
   width: 100%;
   border-top: 1px solid #380e1d;
@@ -248,20 +301,26 @@ div.ratio-wrapper-content {
   margin: 40px 0;
 }
 .inner h2,
-.middle h2{
-  font-size: 1.8em;
+.middle h2 {
+  font-size: 1.5em;
   text-align: left;
   text-transform: uppercase;
-  height: 40px;
+  min-height: 40px;
   border-bottom: 1px dashed #999;
   padding-bottom: 5px;
 }
-.middle h2 .punctuation {
+
+.graphic_txt {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  padding-top: 55px;
+}
+
+.graphic_txt .punctuation {
   color: #bd114f;
   font-size: 1.6em;
-  margin-top: -10px;
-  vertical-align: top;
-  display: inline-block;
 }
 .carousel-control.left,
 .carousel-control.right {
@@ -291,7 +350,7 @@ div.ratio-wrapper-content {
   border: 5px solid #fff;
   border-radius: 5px;
   box-shadow: 3px 3px 5px #000;
-  padding:20px 70px;
+  padding:0.3em 2em;
   position: relative;
   top: -35px;
 }
@@ -310,6 +369,11 @@ div.ratio-wrapper-content {
   text-align: left !important;
   text-transform: uppercase;
 }
+.form-horizontal textarea, .form-horizontal input {
+  font-size: 12px;
+  border-radius: 0px;
+  padding: 6px 6px;
+}
 .form-horizontal .btn-default {
   color: #fff;
   text-transform: uppercase;
@@ -317,6 +381,7 @@ div.ratio-wrapper-content {
   height: 40px;
   background-color: #F95900;
   border: none;
+  border-radius: 0px;
 }
 .form-horizontal .btn-default:hover,
 .form-horizontal .btn-default:focus,
@@ -326,29 +391,142 @@ div.ratio-wrapper-content {
   background-color: #651127;
 }
 .share_butt {
+  text-align: left;
   margin: 20px 5px;
+  display: initial;
+}
+.top_score {
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px dashed #999;
+  padding-bottom: 10px;
+  margin: 10px 0 5px;
+}
+.logo_top_score {
+  width: 80px;
+}
+.top_score .iw_logo {
+  margin: 0;
+}
+.top_score .iw_logo img{
+  width: 180px;
 }
 
-@media(max-width:1024px) {
+/*//// COOKIES ////*/
+  @keyframes desaparecer
+  {
+  0%    {bottom: 0px;}
+  80%   {bottom: 0px;}
+  100%    {bottom: -50px;}}
+  @-webkit-keyframes desaparecer /* Safari and Chrome */
+  {
+  0%    {bottom: 0px;}
+  80%   {bottom: 0px;}
+  100%    {bottom: -50px;}}
+  @keyframes aparecer
+  {
+  0%    {bottom: -38px;}
+  10%   {bottom: 0px;}
+  90%   {bottom: 0px;}
+  100%    {bottom: -38px;}}
+  @-webkit-keyframes aparecer /* Safari and Chrome */
+  {
+  0%    {bottom: -38px;}
+  10%   {bottom: 0px;}
+  90%   {bottom: 0px;}
+  100%    {bottom: -38px;}}
+
+  #cookiesms1:target {
+  display: none;}
+
+  .cookiesms{ 
+    width:100%;
+    height:43px;
+    margin:0 auto;
+    padding-left:1%;
+    padding-top:5px;
+    font-size:12px;
+    clear:both;
+    color: #efefef;
+    bottom:-50px;
+    position:fixed;
+    left: 0px;
+    background-color: #13050a;
+    opacity:0.99;
+    filter:alpha(opacity=99); /* For IE8 and earlier */
+    transition: bottom 1s;
+    -webkit-transition:bottom 1s; /* Safari */
+    -webkit-box-shadow: 3px -3px 1px #13050a;
+    -moz-box-shadow:    3px -3px 1px #13050a;
+    box-shadow:         3px -3px 1px #13050a;
+    z-index:999999999;
+  }
+  .cookiesms a{
+    color: #ddd;
+    font-weight:bold;
+  }
+  .cookiesms a:hover{
+    color:#fff;
+  }
+  .cookiesms:hover{
+  bottom:0px;
+  }
+  .cookies2 {
+    background-color: #000;
+    display:inline;
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    position:absolute; 
+    left:1%; 
+    top:-27px;
+    font-size:12px;
+    height:25px;
+    padding-top:6px;
+    padding-left:25px;
+    padding-right:25px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    z-index:9999999999;
+  }
+  .button_cook {
+    font-size:14px;
+    font-weight:;   
+    color: #fff;
+    height: 30px;
+    width: 120px;
+    background-color:#250813; 
+    border-radius: 3px;
+      border:0px;
+    /*box-shadow: 0px 3px 3px #000;
+    -moz-box-shadow: 0px 3px 3px #000;
+    -webkit-box-shadow: 0px 3px 3px #000;*/
+    zoom: 1; 
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#333333', Direction=135, Strength=3); /* IE */
+  }
+  .button_cook:hover, .button_cook:focus, .button_cook:active {
+    background-color: #111;
+  }
+@media (max-width:1200px) {
   div.inner {
     width: 80%;
   }
 }
 
-@media(max-width:991px) {
+@media (max-width: 991px) {
   div.inner {
     width: 90%;
   }
 }
 
-@media(max-width:767px) {
+@media (max-width:767px) {
   div.inner {
     width: 90%;
   }
   .play {
     font-size: 2em;
-  }
-  .share_butt {
-    display: initial;
   }
 }

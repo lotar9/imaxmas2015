@@ -21,15 +21,15 @@
       var text = this.game.add.text(
           0,
           200,
-          this.getTrad('game.Level')+" "+level+":",
+          this.getTrad('game.Level')+" "+level+": ",
           { font: '36px Monospace', fill: '#FFF' }
       );
 
       var text2 = this.game.add.text(
           0,
           200,
-          this.getTrad('game.splash'+level+'Text') ,
-          { font: '36px Monospace', fill: '#FF0' }
+          '"'+this.getTrad('game.splash'+level+'Text')+'"' ,
+          { font: '36px Monospace', fill: '#FF8100' }
       );
       text.x = (this.game.world.centerX - (text.width+text2.width) / 2);
       text2.x = (this.game.world.centerX - (text.width+text2.width) / 2)+text.width;
@@ -44,7 +44,7 @@
         0,
         450,
         this.getTrad('game.'+device+'.splash'+level+'Help'),
-        { font: '30px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:1000 }
+        { font: '28px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:1000 }
       );
       text3.x = (this.game.world.centerX - text3.width / 2);
     }
@@ -117,7 +117,7 @@
             this.x,
             this.y,
             this.total  + ' ',
-            { fontSize: '32px', fill: '#FFF', stroke: '#000' }
+            { fontSize: '32px', fill: '#FFF'  }
         );
     }
 
@@ -167,7 +167,7 @@
             this.x,
             this.y,
             this.remaining + ' ',
-            { fontSize: '52px', fill: '#FFF', stroke: '#000' }
+            { fontSize: '52px', fill: '#FFF' }
         );
     }
 

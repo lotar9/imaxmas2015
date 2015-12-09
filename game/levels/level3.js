@@ -18,7 +18,7 @@
     GameContext.prototype.preload = function()
     {
         this.game.load.image( "background", "game/sprites/level3/03_fondo-01.png" );
-        this.game.load.image( "road", "game/sprites/level3/03_camino-loop.png" );
+        this.game.load.image( "road", "game/sprites/level3/03_camino2048.png" );
         this.game.load.image( "car", "game/sprites/level3/03_coche.png" );
         this.game.load.image( "camels", "game/sprites/level3/03_camellos.png" );
         this.game.load.image( "rocks", "game/sprites/level3/03_rocas.png" );
@@ -32,6 +32,21 @@
         this.game.load.audio( 'targetSound',
             [ 'game/music/level3/target_sound.mp3', 'game/music/level3/target_sound.ogg' ]
         );
+    }
+    
+    GameContext.prototype.shutdown = function()
+    {
+        this.game.cache.removeImage( "background" );
+        this.game.cache.removeImage( "road" );
+        this.game.cache.removeImage( "car" );
+        this.game.cache.removeImage( "camels" );
+        this.game.cache.removeImage( "rocks" );
+        this.game.cache.removeImage( "palm" );
+        this.game.cache.removeImage( "gas" );
+        this.game.cache.removeImage( "cloud" );
+
+        this.game.cache.removeSound( 'themeSong' );
+        this.game.cache.removeSound( 'targetSound' );
     }
 
     GameContext.prototype.create = function()
@@ -47,7 +62,7 @@
 
         // Init music
         this.themeSong = this.game.add.audio( 'themeSong' );
-        this.themeSong.play();
+        this.themeSong.loopFull(1);
 
         // Load Background
         this.loadBackground();
@@ -121,10 +136,10 @@
             }, this );
 
             // Add Clouds
-            if( this.game.rnd.between( 0, 300 ) > 298 )
+            /*if( this.game.rnd.between( 0, 300 ) > 298 )
             {
                 this.cloudsGroup.add( new Cloud( this ) );
-            }
+            }*/
         }
 
         // Car blink

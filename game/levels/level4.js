@@ -53,8 +53,7 @@ heliGame.prototype = {
      preload: function(){
           var assets = {
         image: {
-        	background: ["game/sprites/level4/04_fondo.png"],
-            municion: ['game/sprites/level4/04_paq_ayuda.png'],
+        	background: ["game/sprites/level4/04_fondo2048.png"],
             fence: ['game/sprites/level4/fence.png'],
             finger: ['game/sprites/level4/Arbol.png']
         },
@@ -70,6 +69,7 @@ heliGame.prototype = {
         });
     });
     helicopter = game.load.image("helicopter" , "game/sprites/level4/04_helicoptero.png");
+    game.load.image("muni" , "game/sprites/level4/04_paq_ayuda.png");
     aldea = game.load.image("aldea" , "game/sprites/level4/04_aldea.png");
     package = game.load.image("package" , "game/sprites/level4/municion.gif");
     game.load.audio('base', ['game/music/level4/jungle_loop.mp3','game/music/level4/jungle_loop.ogg']);
@@ -82,20 +82,21 @@ heliGame.prototype = {
     scoresound = game.add.audio('scoresound');
     gameoversound = game.add.audio('gameoversound');
     helicoptersound = game.add.audio('helicoptersound');
-    municion = game.add.group();
-    municion.enableBody = true;
     initBackground4();
     scoreCredit = new Score( this.game );
 	helicopter = this.game.add.sprite(0.5, 0.5, 'helicopter');
     this.game.physics.enable(helicopter, Phaser.Physics.ARCADE);
-    this.game.physics.enable(municion, Phaser.Physics.ARCADE);
     helicopter.scale.setTo(0.2,0.2);
     helicopter.anchor.setTo(0.5,0.5);
     helicopter.body.gravity.y = GRAVITY;
-    municion.setAll('anchor.x', 0.5);
+    municion = game.add.group();
+	municion.createMultiple(CREDITS,'muni');
+	municion.setAll('anchor.x', 0.5);
     municion.setAll('anchor.y', 1);
-    municion.setAll('checkWorldBounds', true);
-    municion.setAll('outOfBoundsKill', true);
+    municion.enableBody = true;
+    municion.physicsBodyType = Phaser.Physics.ARCADE;
+   // municion.setAll('checkWorldBounds', true);
+   // municion.setAll('outOfBoundsKill', true);
     aldeas = game.add.group();
     fingers = game.add.group();
     // Add invisible thingies
@@ -134,6 +135,16 @@ heliGame.prototype = {
 		reset();
 
      },
+     shutdown: function()
+     {
+        game.cache.removeImage("helicopter" );
+        game.cache.removeImage("muni" );
+        game.cache.removeImage("aldea" );
+        game.cache.removeImage("package" );
+        game.cache.removeSound('base' );
+        game.cache.removeSound('gameoversound' );
+        game.cache.removeSound('helicoptersound' );
+     },
      update: function(){
 		 if (gameStarted) {
 
@@ -160,31 +171,31 @@ heliGame.prototype = {
             gameOverText.angle = Math.random() * 5 * Math.cos(game.time.now / 100);
         } else {
 
-            if(game.physics.arcade.overlap(municion, aldeas)){
-				municion.kill();
+            game.physics.arcade.overlap(municion, aldeas,function(muni,aldea){
+				muni.kill();
             	addScore();
             	if(gameFinish){
 					finish();
 				}
-            }
+            },null,this);
             if(game.physics.arcade.collide(helicopter, fingers)){
 				if(!gameFinish)
 					setGameOver();
             }
-            if(game.physics.arcade.overlap(municion, fence)){
-            	municion.kill();
+            game.physics.arcade.overlap(municion, fence, function(fence,muni){
+            	muni.kill();
             	gameoversound.play();
             	if(gameFinish){
 					finish();
 				}
-            }
-            if(game.physics.arcade.overlap(municion, fingers)){
-            	municion.kill();
+            }, null ,this);
+            game.physics.arcade.overlap(municion, fingers , function(muni,finger){
+            	muni.kill();
             	gameoversound.play();
             	if(gameFinish){
 					finish();
 				}
-            }
+            }, null , this);
             if (!gameOver && !gameFinish && helicopter.body.bottom >= this.game.world.bounds.bottom) {
                 setGameOver();
             }
@@ -243,12 +254,15 @@ function tirar () {
     	//reset();
     }
     if(contador<=CREDITS){
-		municion = this.game.add.sprite(helicopter.x, helicopter.y, 'municion');
-		this.game.physics.enable(municion, Phaser.Physics.ARCADE);
-		municion.scale.setTo(0.5,0.5);
-		municion.body.velocity.setTo(20, 200);
-		municion.body.bounce.set(0.1);
-		municion.body.gravity.set(0, 100);
+		//municion = this.game.add.sprite(helicopter.x, helicopter.y, 'ayuda');
+		var muni = municion.getFirstDead();
+		//muni = municion.getFirstExists(false);
+		muni.reset(helicopter.x, helicopter.y);
+		this.game.physics.enable(muni, Phaser.Physics.ARCADE);
+		muni.scale.setTo(0.5,0.5);
+		muni.body.velocity.setTo(20, 200);
+		muni.body.bounce.set(0.1);
+		muni.body.gravity.set(0, 100);
 	}
 };
 function start() {
@@ -284,7 +298,7 @@ function drawPackages()
         80,
         12,
         World.totalScore / 10 + " ",
-        { fontSize: '28px', fill: '#FFF', stroke: '#000', strokeThickness: '5' }
+        { fontSize: '28px', fill: '#FFF'  }
     );
 }
 
@@ -397,6 +411,7 @@ function reset() {
         CREDITS = CREDITS_DEFAULT;
         World.totalScore = CREDITS_DEFAULT * 10;
     }
+    municion.createMultiple(CREDITS,'muni');
     contador = 0;
     gameFinish = false;
     scoreText.setText(World.getTrad("game.level4Start"));

@@ -4,10 +4,10 @@ include ('functions.php');
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="iso-8859-15">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-		<title>XMas Imaweb 2015</title>
+		<title>Road to Xai-Xai | Imaweb | 2015</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 		<link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/main.css">
@@ -25,16 +25,26 @@ include ('functions.php');
 		<section class="scores">
 			<div class="inner">
 				<div class="middle">
+					<div class="row top_score">
+							<a href="index.php" title="Road to Xai-Xai "><img class="logo_top_score" src="img/logo_xl.png"></a>
+							<a href="http://www.imaweb.net/" target="_blank" title="IMAWEB" class="iw_logo float-right"><img src="img/logo_imaweb-w.png"></a>
+					</div>
 					<h2 id="scores">scores</h2>
 					<table class="puntuaciones">
-						<tr><th id="name">NOMBRE</th><th id="message">MENSAJE</th><th id="score">PUNTUACION</th><th id="location">LOCATION</th></tr>
+						<tr>
+							<th id="name">NOMBRE</th>
+							<th id="message">MENSAJE</th>
+							<th id="score" class='align-center'>PUNTUACION</th>
+							<th id="location" class='align-center'>LOCATION</th>
+						</tr>
 						<?php
 							$results = listScores();
 							while($row = $results->fetch_object()){
-							    echo "<td>".$row->person_name."</td>";
-							    echo "<td>".$row->message."</td>";
-							    echo "<td>".$row->help_amount."</td>";
-							    echo "<td>".$row->province."</td>";
+								echo "<tr class='fila0'>";
+							    echo "<td class='align-left'>".utf8_decode($row->person_name)."</td>";
+							    echo "<td class='align-left'>".utf8_decode($row->message)."</td>";
+							    echo "<td class='t_pts_prov'>".$row->help_amount."</td>";
+							    echo "<td class='t_pts_prov'>".utf8_decode($row->province)."</td>";
 							    echo "</tr>";
 							}
 						?>
