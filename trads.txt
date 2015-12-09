@@ -40,7 +40,7 @@
 		"game.level4Start" : "Para comenzar",
 		"game.level4PushUp" : "Pulsa la flecha Arriba.",
 		"game.youDelivered" : "Conseguiste entregar ",
-		"game.kgHelp" : " kilos de ayuda.",
+		"game.kgHelp" : " Kgs.",
 		"graphic.collected": "Kgs. Recolectados",
 		"graphic.remaining": "Kgs. Faltantes"
 

@@ -145,43 +145,45 @@
 		<section class="panel final" id="panel_final" scroll-panel="4">
 			<div class="inner">
 				<div class="middle">
-					<form class="form-horizontal" id="formulario" method="POST" action="functions.php" onsubmit="return formSubmit();" >
-						<input type = "hidden" name="location" id="message_location"/>
-						<input type="hidden" name="id" id="message_id"/>
-						<input type="hidden" name="extra_kg" id="extra_kg"/>
-						<div class="col-xs-12 col-sm-6">
-							<h2><span id="title_section4">Thanks</span>  <!--<span class='punctuation'>0</span> <span id="title_section5">help</span> --></h2>
-							<div class="row graphic">
-								<div class="col-xs-8">
-									<canvas id="myChart" width="150" height="150"></canvas>
+					<div class="row">
+						<form class="form-horizontal" id="formulario" method="POST" action="functions.php" onsubmit="return formSubmit();" >
+							<input type = "hidden" name="location" id="message_location"/>
+							<input type="hidden" name="id" id="message_id"/>
+							<input type="hidden" name="extra_kg" id="extra_kg"/>
+							<div class="col-xs-12 col-sm-6">
+								<h2><span id="title_section4">Thanks</span>  <!--<span class='punctuation'>0</span> <span id="title_section5">help</span> --></h2>
+								<div class="row graphic">
+									<div class="col-xs-8">
+										<canvas id="myChart" width="150" height="150"></canvas>
+									</div>
+									<div class="col-xs-4 graphic_txt">
+										<span class='punctuation'>0</span> <span id="title_section5">help</span>
+									</div>
 								</div>
-								<div class="col-xs-4 graphic_txt">
-									<span class='punctuation'>0</span> <span id="title_section5">help</span>
-								</div>
 							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6">
-							<h2><span id="leave_your_messasge">leave_your_messasge</span></h2>
-							<p id="info_message" class="align-left dashedBott">Déjenos un mensaje en nuestro muro.<p>
-							<div class="form-group">
-							<label class="col-sm-2 control-label" id="name">name</label>
-							<div class="col-sm-10">
-								<input class="form-control" id="person_name" maxlength="255" name="nombre" type="text"/>
-							</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label" id="message">message</label>
+							<div class="col-xs-12 col-sm-6">
+								<h2><span id="leave_your_messasge">leave_your_messasge</span></h2>
+								<p id="info_message" class="align-left dashedBott">Déjenos un mensaje en nuestro muro.<p>
+								<div class="form-group">
+								<label class="col-sm-2 control-label" id="name">name</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" id="message_text" name="mensaje" rows="3" cols="40" ></textarea>
+									<input class="form-control" id="person_name" maxlength="255" name="nombre" type="text"/>
+								</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" id="message">message</label>
+									<div class="col-sm-10">
+										<textarea class="form-control" id="message_text" name="mensaje" rows="3" cols="40" ></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<button type="submit" class="btn btn-default"><span id="submit">send</span></button>
+									</div>
 								</div>
 							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
-									<button type="submit" class="btn btn-default"><span id="submit">send</span></button>
-								</div>
-							</div>
-						</div>
-					</form>
+						</form>
+					</div>
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-6">
@@ -202,5 +204,13 @@
 				</div>
 			</div>
 		</section>
+		<div class="cookiesms" id="cookie1">
+			Este sitio usa cookies, al pinchar aceptas su uso.  
+			<button onclick="controlcookies()" class="button_cook">Aceptar</button>
+			<div class="cookies2">COOKIES</div>
+		</div>
+		<script type="text/javascript">
+			if (!localStorage.controlcookie>0){ cookie1.setAttribute("style","animation: desaparecer 5s;-webkit-animation: desaparecer 5s;");}
+		</script>
 	</body>
 </html>
