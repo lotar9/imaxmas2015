@@ -211,7 +211,6 @@
 		</section>
 		<div class="cookiesms" id="cookie1">
 			<span id="cookieText">CookieText</span>
-			<button onclick="controlcookies()" class="button_cook">OK</button>
 			<div class="cookies2">COOKIES</div>
 		</div>
 		<script type="text/javascript">

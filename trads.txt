@@ -49,9 +49,7 @@
 		"graphic.collected": "Kgs. Recolectados",
 		"graphic.remaining": "Kgs. Faltantes",
 		"social_initial": "Comparte nuestra iniciativa solidaria para ayudar con 3.000¤ a los niños de Praia Xai-Xai, Mozambique",
-		"cookieText": "Este sitio usa cookies, al pinchar aceptas su uso."
-		
-
+		"cookieText": "Este sitio web utiliza cookies para mejorar la navegación en su web. Al continuar navegando en este Sitio Web, está aceptando su utilización en los términos establecidos en la Política de Cookies."
 	},
 	"EN":{
 		"MenuHome":"Home",
