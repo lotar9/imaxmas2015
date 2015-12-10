@@ -152,7 +152,7 @@ function repaintDoughnut(first){
 }
 
 function clickMenu(id){
-	$(document).scrollTop( $("#section"+id+"]").offset().top );
+	$(document).scrollTop( $("#section"+id).offset().top );
 }
 
 function changeSocialLinks(newtext) {
