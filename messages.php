@@ -26,8 +26,8 @@ include ('functions.php');
 			<div class="inner">
 				<div class="middle">
 					<div class="row top_score">
-							<a href="index.php" title="Road to Xai-Xai "><img class="logo_top_score" src="img/logo_xl.png"></a>
-							<a href="http://www.imaweb.net/" target="_blank" title="IMAWEB" class="iw_logo float-right"><img src="img/logo_imaweb-w.png"></a>
+						<a href="index.php" title="Road to Xai-Xai "><img class="logo_top" src="img/top_header_web.png"></a>
+						<a href="http://www.imaweb.net" title="IMAWEB" target="_blank" class="iw_logo float-right"><img src="img/logo_orbit.png"></a>
 					</div>
 					<h2 id="scores">scores</h2>
 					<table class="puntuaciones">

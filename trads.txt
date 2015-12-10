@@ -114,7 +114,7 @@
 		"MenuThanks": "Agradecimentos",
 		"language": "Idioma",
 		"titleXmas":"Imaweb Christmas 2015",
-		"welcome":"Chegamos a estas datas, e queremos voltar a contar contigo no nosso projeto de solidariedade.<br/><br/>Para conseguir isso, simplesmente tens de doar um pouco do teu tempo e jugar conosco. É fácil, não te preocupes. Em troca, ao alcançar o nosso objetivo de <strong>50.000 Kg.</strong> de ajuda, nós doaremos 3.000? á <a href='http://www.fundacionkhanimambo.org/' target='_blank'>Fundação Khanimambo</a>.<br/><br/>Esta fundação é dedicada a projetos educativos para crianças e adultos, projetos sociais e de saúde, nutrição e projetos para prevenir a SIDA, em Praia Xai­Xai, Moçambique. Esta contribuição de solidariedade que vais fazer permitirá que seja possível alimentar 169 crianças durante um mês inteiro.<br/><br/>Ao ajudá-los, também permitimos que nos ajudem.<br/><br/><p>¡Feliz Natal e muito obrigado pela sua participação!</p>",
+		"welcome":"Chegamos a estas datas, e queremos voltar a contar contigo no nosso projeto de solidariedade.<br/><br/>Para conseguir isso, simplesmente tens de doar um pouco do teu tempo e jugar conosco. É fácil, não te preocupes. Em troca, ao alcançar o nosso objetivo de <strong>50.000 Kg.</strong> de ajuda, nós doaremos 3.000¤ á <a href='http://www.fundacionkhanimambo.org/' target='_blank'>Fundação Khanimambo</a>.<br/><br/>Esta fundação é dedicada a projetos educativos para crianças e adultos, projetos sociais e de saúde, nutrição e projetos para prevenir a SIDA, em Praia Xai­Xai, Moçambique. Esta contribuição de solidariedade que vais fazer permitirá que seja possível alimentar 169 crianças durante um mês inteiro.<br/><br/>Ao ajudá-los, também permitimos que nos ajudem.<br/><br/><p>¡Feliz Natal e muito obrigado pela sua participação!</p>",
 		"rules":"Instruções",
 		"score":"Pontuação",
 		"name":"Nome",
@@ -131,7 +131,7 @@
 		"carousel-2":"Leva toda a ajuda recolhida a través do oceano no nosso barco. Deves esquivar as baleias, as tartarugas e os faros ou terás que começar de novo.",
 		"carousel-3":"Sobe ao nosso 4x4 e atravesa o deserto para chegar a Moçambique. Deves recolher tambores de combustível para que o 4x4 não fique parado e tenhas que voltar a começar. ¡E não batas com nada!",
 		"carousel-4":"Reparte a ajuda desde o helicóptero que voa pela selva, lançando-a sobre as aldeias que aparecem. Se falhas, não conta como ajuda entregada.",
-		"carousel-5":"Joga todas as vezes que quiseres e deixa tantas mensagem como queiras. O objetivo é recoletar 50.000 kgs. de ajuda entre todos. Cuanto mais deixes, ajudarás a conseguir antes o nosso objetivo de doar 3.000? á Fundação Khanimambo.",
+		"carousel-5":"Joga todas as vezes que quiseres e deixa tantas mensagem como queiras. O objetivo é recoletar 50.000 kgs. de ajuda entre todos. Cuanto mais deixes, ajudarás a conseguir antes o nosso objetivo de doar 3.000¤ á Fundação Khanimambo.",
 		"play": "Joga",
 		"start": "Play",
 		"start_carousel":"Play",
@@ -158,6 +158,6 @@
 		"graphic.collected": "Kgs. Recolhidos",
 		"graphic.remaining": "Kgs. Em falta",
 		"cookieText": "Este sitio web utiliza cookies para melhorar a navegação na sua web. Ao continuar navegando neste Sitio Web, está aceitando a sua utilização nos termos estabelecidos na Política de Cookies.",
-		"social_initial": "Joga com nós para fazer posível a nossa iniciativa de doar 3.000? as crianças de Praia Xai-Xai, Moçambique"
+		"social_initial": "Joga com nós para fazer posível a nossa iniciativa de doar 3.000¤ as crianças de Praia Xai-Xai, Moçambique"
 	}
  }

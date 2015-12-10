@@ -50,7 +50,7 @@
 								<li><a id="PT" onclick="changeLan(this.id)"><img class="flag" src="img/flag_pt.png"> - PT </a></li>
 							</ul>
 						</li>
-						<a href="http://www.imaweb.net" title="IMAWEB" target="_blank" class="iw_top"><img src="img/logo_imaweb-w2.png"></a>
+						<a href="http://www.imaweb.net" title="IMAWEB" target="_blank" class="iw_top"><img src="img/logo_orbit.png"></a>
 					</ul>
 				</div>
 			</div>
