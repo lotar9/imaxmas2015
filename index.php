@@ -85,7 +85,7 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="img/initial.png" alt="Inicial">
+							<img src="img/initial2.png" alt="Inicial">
 							<div id="carousel-0" class="carousel-caption">
 								carousel-0
 							</div>

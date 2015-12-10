@@ -41,10 +41,10 @@ include ('functions.php');
 							$results = listScores();
 							while($row = $results->fetch_object()){
 								echo "<tr class='fila0'>";
-							    echo "<td class='align-left'>".utf8_decode($row->person_name)."</td>";
-							    echo "<td class='align-left'>".utf8_decode($row->message)."</td>";
+							    echo "<td class='align-left'>".$row->person_name."</td>";
+							    echo "<td class='align-left'>".$row->message."</td>";
 							    echo "<td class='t_pts_prov'>".$row->help_amount."</td>";
-							    echo "<td class='t_pts_prov'>".utf8_decode($row->province)."</td>";
+							    echo "<td class='t_pts_prov'>".$row->province."</td>";
 							    echo "</tr>";
 							}
 						?>
