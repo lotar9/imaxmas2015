@@ -4,15 +4,6 @@ $(function(){
 	getLocation();
 	setupDefaultLanguage();
 	getTotalKgObtained();
-	$.scrollify({
-		section: '.panel',
-		offset: 0,
-		after:function(){
-			var panelId = $($.scrollify.current()).attr('scroll-panel');
-			$('.navbar-nav').children().removeClass('active');
-			$("a[scroll-panel='"+panelId+"']").parent().addClass('active');
-		}
-	});
 	p = punctuation;
 	v = message_id;
 	if (p > 0 ){
@@ -20,7 +11,7 @@ $(function(){
 		if (v > 0){
 			$('#message_id').val(v);
 		}
-		$.scrollify.move("#4");
+		clickMenu(4);
 	}
 	socialText = encodeURIComponent(getTranslation('social_initial'));
 	if(socialText != '') changeSocialLinks(socialText);
@@ -157,13 +148,13 @@ function repaintDoughnut(first){
 	data[0].label = getTranslation('graphic.collected');
 	data[1].label = getTranslation('graphic.remaining');
 	var ctx = document.getElementById("myChart").getContext("2d");
-	//$(ctx).html('');
 	var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
 }
 
-function clickMenu(id,elem){
-	$.scrollify.move('#'+id);
+function clickMenu(id){
+	$(document).scrollTop( $("#section"+id+"]").offset().top );
 }
+
 function changeSocialLinks(newtext) {
 
 	$('.twitter-intent').attr('href','https://twitter.com/intent/tweet?text='+newtext+'&url=http://www.imaweb.net/xmas2015').attr('target','_blank');

@@ -17,7 +17,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-		<script src="scripts/jquery.scrollify.min.js"></script>
 		<script type="text/javascript" src="scripts/language.js" ></script>
 		<script type="text/javascript" src="scripts/main.js" ></script>
 		<script type="text/javascript">
@@ -25,7 +24,7 @@
 			var message_id = parseInt("<?= isset( $_POST['message_id'] ) ? $_POST['message_id'] : 0; ?>");
 		</script>
 	</head>
-	<body>
+	<body data-spy="scroll" data-target=".navbar" offset="0">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -33,14 +32,14 @@
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php"><img class="logo_top" src="img/logo_xl.png"></a>
+					<a class="navbar-brand" href="index.php"><img class="logo_top" src="img/top_header_web.png"></a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-6">
 					<ul class="nav navbar-nav">
-						<li class="active"><a scroll-panel="1" id="MenuHome" onclick="clickMenu(1,this)">Home</a></li>
-						<li><a scroll-panel="2" id="MenuRules" onclick="clickMenu(2,this)">Rules</a></li>
-						<li><a scroll-panel="3" id="MenuGame" onclick="clickMenu(3,this)">Game</a></li>
-						<li><a scroll-panel="4" id="MenuThanks" onclick="clickMenu(4,this)">Thanks</a></li>
+						<li class="active"><a href="#section1" id="MenuHome" >Home</a></li>
+						<li><a href="#section2"  id="MenuRules" >Rules</a></li>
+						<li><a href="#section3"  id="MenuGame" >Game</a></li>
+						<li><a href="#section4"  id="MenuThanks" >Thanks</a></li>
 						<li class="dropdown">
 							<a id="lang-dropdown-nav" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								<span id="language">Language</span> <span class="caret"></span>
@@ -51,28 +50,28 @@
 								<li><a id="PT" onclick="changeLan(this.id)"><img class="flag" src="img/flag_pt.png"> - PT </a></li>
 							</ul>
 						</li>
-						<a href="http://www.imaweb.net" title="IMAWEB" target="_blank" class="iw_top"><img src="img/logo_imaweb-w.png"></a>
+						<a href="http://www.imaweb.net" title="IMAWEB" target="_blank" class="iw_top"><img src="img/logo_imaweb-w2.png"></a>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<section class="panel logo" scroll-panel="1">
+		<section class="panel logo" id="section1">
 			<div class="inner">
-				<h1 class="logo_main"><img class="img-responsive" src="img/logo_xl.png"></h1>
+				<h1 class="logo_main"><img class="img-responsive" src="img/logo_main.png"></h1>
 				<!-- <h1 id="titleXmas">XMAS IMAWEB 2015</h1> -->
 				<div class="welcome" id="welcome">
 					welcome
 				</div>
 				<div class="welcome2">
-					<a scroll-panel="2" onclick="clickMenu(2,this)" id="rules">Rules</a> | <a scroll-panel="3" onclick="clickMenu(3,this)" id="start">start</a>
+					<a href="#section2" id="rules">Rules</a> | <a href="#section3" id="start">start</a>
 				</div>
 				<!-- <div class="about"><a href="http://www.imaweb.net" title="IMAWEB" target="_blank"><img src="img/logo_imaweb-w.png"></a></div> -->
 			</div>
 		</section>
 
-		<section class="panel explanation" scroll-panel="2">
+		<section class="panel explanation" id="section2">
 			<div class="inner">
-				<h2><span id="rules_carousel">rules</span></h2>
+				<h2><span id="rules">rules</span></h2>
 				<div id="carousel-levels" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -136,20 +135,20 @@
 			</div>
 		</section>
 
-		<section class="panel game" scroll-panel="3">
+		<section class="panel game" id="section3">
 			<div class="inner">
 				<div class="middle">
 				<h2><span id="play">play</span></h2>
 					<div class="ratio-wrapper">
 						<div class="ratio-wrapper-content">
-							<a href="game.html" class="play" id="start_game">start</a>
+							<a href="game.html" class="play" id="start">start</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="panel final" id="panel_final" scroll-panel="4">
+		<section class="panel final" id="section4">
 			<div class="inner">
 				<div class="middle">
 					<div class="row">
