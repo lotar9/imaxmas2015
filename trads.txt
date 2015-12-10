@@ -8,7 +8,7 @@
 		"titleXmas":"Imaweb Christmas 2015",
 		"welcome":"Llegando a estas fechas señaladas, queremos volver a contar contigo en nuestro proyecto solidario.<br/><br/>Para conseguirlo, solo tienes que donar un poco de tu tiempo y jugar con nosotros. Es muy fácil, no te preocupes. A cambio, al llegar a nuestro objetivo final de <strong>50.000 Kg.</strong> de ayuda, donaremos 3.000? a la <a href='http://www.fundacionkhanimambo.org/' target='_blank'>Fundación Khanimambo</a>.<br/><br/>Esta fundación se dedica a proyectos educativos para niños y adultos, proyectos sociales y sanitarios, de nutrición y para prevenir el SIDA, en Praia Xai­Xai, Mozambique. La aportación solidaria que vas a hacer posible permitirá alimentar a sus 169 niños durante todo un mes.<br/><br/>Al ayudarlos, también permitimos que nos ayuden.<br/><br/><p>¡Felices fiestas y muchas gracias por tu participación!</p>",
 		"rules":"Instrucciones",
-		"score":"Puntuacion",
+		"score":"Puntuación",
 		"name":"Nombre",
 		"message":"Mensaje",
 		"scores":"Puntuaciones",
@@ -48,8 +48,8 @@
 		"game.kgHelp" : " Kgs.",
 		"graphic.collected": "Kgs. Recolectados",
 		"graphic.remaining": "Kgs. Faltantes",
-		"social_initial": "Comparte nuestra iniciativa solidaria para ayudar con 3.000? a los niños de Praia Xai-Xai, Mozambique",
-		"cookieText": "Este sitio usa cookies, al pinchar aceptas su uso."
+		"social_initial": "Juega con nosotros para hacer posible nuestra iniciativa de donar 3.000? a los niños de Praia Xai-Xai, Mozambique",
+		"cookieText": "Este sitio usa cookies, al continuar navegando aceptas su uso."
 	},
 	"EN":{
 		"MenuHome":"Home",
@@ -100,8 +100,8 @@
 		"game.kgHelp" : " Kilos.",
 		"graphic.collected": "Kilos recolected",
 		"graphic.remaining": "Kilos left",
-		"social_initial": "Share our solidarity initiative to help children from Praia Xai-Xai, Mozambique, with 3.000?",
-		"cookieText": "This siteEste uses cookies, if you continue navigating, you accept the conditions."
+		"social_initial": "Juega con nosotros para hacer posible nuestra iniciativa de donar 3.000? a los niños de Praia Xai-Xai, Mozambique",
+		"cookieText": "Este sitio usa cookies, al continuar navegando aceptas su uso."
 	},
 	"PT":{
 		"MenuHome":"Inicio",
@@ -152,7 +152,7 @@
 		"game.kgHelp" : " Kgs.",
 		"graphic.collected": "Kgs. Recolectados",
 		"graphic.remaining": "Kgs. Faltantes",
-		"social_initial": "Comparte nuestra iniciativa solidaria para ayudar con 3.000? a los niños de Praia Xai-Xai, Mozambique",
-		"cookieText": "Este sitio usa cookies, al pinchar aceptas su uso."
+		"social_initial": "Juega con nosotros para hacer posible nuestra iniciativa de donar 3.000? a los niños de Praia Xai-Xai, Mozambique",
+		"cookieText": "Este sitio usa cookies, al continuar navegando aceptas su uso."
 	}
  }
