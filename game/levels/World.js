@@ -44,7 +44,7 @@
         0,
         450,
         this.getTrad('game.'+device+'.splash'+level+'Help'),
-        { font: '28px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:1000 }
+        { font: '26px Monospace', fill: '#FFF',align:"center", wordWrap:true,wordWrapWidth:1000 }
       );
       text3.x = (this.game.world.centerX - text3.width / 2);
     }

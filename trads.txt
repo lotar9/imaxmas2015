@@ -6,7 +6,7 @@
 		"MenuThanks": "Agradecimientos",
 		"language": "Idioma",
 		"titleXmas":"Imaweb Christmas 2015",
-		"welcome":"Queremos contar contigo en nuestro proyecto solidario.<br/><br/>Para conseguirlo, solo tienes que donar un poco de tu tiempo y jugar con nosotros a recolectar toda la ayuda posible en nuestro juego para recolectar el objetivo de --PENDIENTE-- kgs entregados.<br/>A cambio, al llegar a nuestro objetivo final, donaremos 3000? a la Fundación Khanimambo. <br/><br/>Esta fundación se encuentra en Praia Xai-Xai, Mozambique, y se dedica a proyectos educativos para niños y adultos, proyectos sociales y sanitarios, de nutrición y para prevenir el SIDA. <br/><br/>La aportación solidaria que vas a hacer posible permitirá alimentar a sus 169 niños durante todo un mes. <br/>Al ayudarlos, también permitimos que nos ayuden.",
+		"welcome":"Llegando a estas fechas señaladas, queremos volver a contar contigo en nuestro proyecto solidario.<br/><br/>Para conseguirlo, solo tienes que donar un poco de tu tiempo y jugar con nosotros. Es muy fácil, no te preocupes. A cambio, al llegar a nuestro objetivo final de <strong>50.000 Kg.</strong> de ayuda, donaremos 3.000¤ a la <a href='http://www.fundacionkhanimambo.org/' target='_blank'>Fundación Khanimambo</a>.<br/><br/>Esta fundación se dedica a proyectos educativos para niños y adultos, proyectos sociales y sanitarios, de nutrición y para prevenir el SIDA, en Praia Xai­Xai, Mozambique. La aportación solidaria que vas a hacer posible permitirá alimentar a sus 169 niños durante todo un mes.<br/><br/>Al ayudarlos, también permitimos que nos ayuden.<br/><br/><p>¡Felices fiestas y muchas gracias por tu participación!</p>",
 		"rules":"Instrucciones",
 		"score":"Puntuacion",
 		"name":"Nombre",
@@ -23,7 +23,7 @@
 		"carousel-2":"Lleva toda la ayuda recolectada a través del Estrecho de Gibraltar en nuestra lancha. Debes esquivar las ballenas, las tortugas y los faros o tendrás que empezar de nuevo.",
 		"carousel-3":"Subete a nuestro 4x4 y atraviesa el desierto para llegar a Mozambique. Debes recoger bidones de combustible para que el 4x4 no se quede parado y tengas que volver a empezar. ¡Y no choques con nada!",
 		"carousel-4":"Reparte la ayuda desde el helicóptero que sobrevuela la selva, lanzándola sobre las aldeas que aparecen. Si fallas, no contará como ayuda entregada.",
-		"carousel-5":"Juega todas las veces que quieras y deja tantos mensajes como te apetezca. El objetivo es recolectar ---PENDIENTE--- kilos de ayuda entre todos. Cuanto más dejes, ayudarás a que consigamos antes nuestro objetivo de donar 3.000? a la Fundación Khanimambo.",
+		"carousel-5":"Juega todas las veces que quieras y deja tantos mensajes como te apetezca. El objetivo es recolectar 50.000 kgs. de ayuda entre todos. Cuanto más dejes, ayudarás a que consigamos antes nuestro objetivo de donar 3.000¤ a la Fundación Khanimambo.",
 		"play": "Juega",
 		"start": "Play",
 		"leave_your_messasge": "Déjanos tu mensaje",
@@ -48,7 +48,9 @@
 		"game.kgHelp" : " Kgs.",
 		"graphic.collected": "Kgs. Recolectados",
 		"graphic.remaining": "Kgs. Faltantes",
+		"social_initial": "Comparte nuestra iniciativa solidaria para ayudar con 3.000¤ a los niños de Praia Xai-Xai, Mozambique",
 		"cookieText": "Este sitio usa cookies, al pinchar aceptas su uso."
+		
 
 	},
 	"EN":{

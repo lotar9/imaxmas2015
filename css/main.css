@@ -60,7 +60,7 @@ div.middle {
 .about {
   width: 80%;
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
 }
 
 .about img,
@@ -86,7 +86,13 @@ p.language {
   top: 20px;
 }
 a {
+  color:#ff8100;
   cursor: pointer;
+}
+
+a:hover, a:active, a:focus {
+  color:#ddd;
+
 }
 
 a.imaweb, a.imaweb:active {
@@ -250,7 +256,7 @@ div.ratio-wrapper-content {
 }
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover {
-  color: #ddd;
+  color: #ff8100;
 }
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
@@ -285,6 +291,10 @@ div.ratio-wrapper-content {
   width: 80px;
   margin-top: -5px;
 }
+.iw_top img{
+  width: 140px;
+  padding: 8px 8px 0;
+}
 .flag {
   width: 20px;
 }
@@ -292,13 +302,30 @@ div.ratio-wrapper-content {
   width: 400px;
   display: initial;
 }
-.welcome {
+.welcome,
+.welcome2 {
   font-size: 1.2em;
   text-align: center;
   width: 100%;
+  max-width: 992px;
   border-top: 1px solid #380e1d;
   padding:20px 10px;
-  margin: 40px 0;
+  margin: 40px auto;
+}
+.welcome p{
+  font-size:20px; 
+  font-weight:bold; 
+  text-align:center; 
+  text-transform:uppercase; 
+  padding-top:20px;
+}
+.welcome2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.welcome2 a:hover {
+  text-decoration: none;
 }
 .inner h2,
 .middle h2 {
@@ -322,6 +349,10 @@ div.ratio-wrapper-content {
   color: #bd114f;
   font-size: 1.6em;
 }
+.carousel {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 .carousel-control.left,
 .carousel-control.right {
   background-image: none!important;
@@ -330,14 +361,19 @@ div.ratio-wrapper-content {
   border-radius: 5px;
 }
 .carousel-caption {
+  font-size: 1.2em;
+  height: 80px;
   background-color: #13050a;
-  opacity: 0.9em;
+  padding: 10px 10px 0;
+  padding-bottom: 0;
+  opacity: 0.9;
   position: relative;
+  top: -120px;
   left: auto;
   right: auto;
 }
 .carousel-indicators {
-  bottom: -10px;
+  bottom: 80px;
 }
 .play {
   color: #fff;
@@ -466,7 +502,7 @@ div.ratio-wrapper-content {
     font-weight:bold;
   }
   .cookiesms a:hover{
-    color:#fff;
+    color:#ff8100;
   }
   .cookiesms:hover{
   bottom:0px;
@@ -508,7 +544,7 @@ div.ratio-wrapper-content {
     filter: progid:DXImageTransform.Microsoft.Shadow(color='#333333', Direction=135, Strength=3); /* IE */
   }
   .button_cook:hover, .button_cook:focus, .button_cook:active {
-    background-color: #111;
+    background-color: #ff8100;
   }
 @media (max-width:1200px) {
   div.inner {
@@ -528,5 +564,8 @@ div.ratio-wrapper-content {
   }
   .play {
     font-size: 2em;
+  }
+  .carousel-caption {
+  font-size: 1em;
   }
 }

@@ -51,6 +51,7 @@
 								<li><a id="PT" onclick="changeLan(this.id)"><img class="flag" src="img/flag_pt.png"> - PT </a></li>
 							</ul>
 						</li>
+						<a href="http://www.imaweb.net" title="IMAWEB" target="_blank" class="iw_top"><img src="img/logo_imaweb-w.png"></a>
 					</ul>
 				</div>
 			</div>
@@ -62,7 +63,10 @@
 				<div class="welcome" id="welcome">
 					welcome
 				</div>
-				<div class="about"><img src="img/logo_imaweb-w.png"></div>
+				<div class="welcome2">
+					<a scroll-panel="2" onclick="clickMenu(2,this)" id="rules">Rules</a> | <a scroll-panel="3" onclick="clickMenu(3,this)" id="start">start</a>
+				</div>
+				<!-- <div class="about"><a href="http://www.imaweb.net" title="IMAWEB" target="_blank"><img src="img/logo_imaweb-w.png"></a></div> -->
 			</div>
 		</section>
 
@@ -155,7 +159,7 @@
 								<h2><span id="title_section4">Thanks</span>  <!--<span class='punctuation'>0</span> <span id="title_section5">help</span> --></h2>
 								<div class="row graphic">
 									<div class="col-xs-8">
-										<canvas id="myChart" width="150" height="150"></canvas>
+										<canvas id="myChart" width="200" height="150"></canvas>
 									</div>
 									<div class="col-xs-4 graphic_txt">
 										<span class='punctuation'>0</span> <span id="title_section5">help</span>
@@ -199,7 +203,7 @@
 							<!-- <div class="share_butt"><a href='messages.php' class='messages-panel'><img class='sn-logo' src='img/ico_email_w.png' /></a></div> -->
 							<br/><br/>
 							<div class="align-left dashedBott">Design by</div>
-							<div class="iw_logo"><img src="img/logo_imaweb-w.png"></div>
+							<div class="iw_logo"><a href="http://www.imaweb.net" title="IMAWEB" target="_blank"><img src="img/logo_imaweb-w.png"></a></div>
 						</div>
 					</div>
 				</div>

@@ -22,7 +22,7 @@ $(function(){
 		}
 		$.scrollify.move("#4");
 	}
-	socialText = getTranslation('social_initial');
+	socialText = encodeURIComponent(getTranslation('social_initial'));
 	if(socialText != '') changeSocialLinks(socialText);
 	else changeSocialLinks('social');
 
@@ -97,14 +97,14 @@ function formSubmit(){
 var data = [
 		{
 				value: 0,
-				color:"#a01127",
-				highlight: "#651127",
+				color: "green",
+				highlight: "#08330e",
 				label: "collected"
 		},
 		{
 				value: 0,
-				color: "green",
-				highlight: "#08330e",
+				color:"#a01127",
+				highlight: "#651127",
 				label: "remaining"
 		},
 ];
@@ -166,6 +166,6 @@ function clickMenu(id,elem){
 }
 function changeSocialLinks(newtext) {
 
-	$('.twitter-intent').attr('href','https://twitter.com/intent/tweet?text='+newtext+'&url=http://example.com');
+	$('.twitter-intent').attr('href','https://twitter.com/intent/tweet?text='+newtext+'&url=http://www.imaweb.net/xmas2015');
 	$('.facebook-intent').attr('href','https://www.facebook.com/dialog/feed?app_id=&display=popup&caption='+newtext+'&link=http://example.com');
 }

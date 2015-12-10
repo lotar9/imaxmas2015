@@ -30,7 +30,7 @@ function create()
 
     var text2 = game.add.text(
         0,
-        225,
+        275,
         World.getTrad('game.youDelivered') + World.totalScore + " "+World.getTrad('game.kgHelp'),
         { fontSize: '42px', fill: '#FFF' }
     );
