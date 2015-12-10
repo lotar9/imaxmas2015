@@ -38,6 +38,10 @@ function changeLan(lan) {
 			});
 	document.cookie="language="+lan;
 	changeNavBarLanguage(lan);
+	
+	socialText = encodeURIComponent(getTranslation('social_initial'));
+	if(socialText != '') changeSocialLinks(socialText);
+	else changeSocialLinks('social');
 }
 
 function changeNavBarLanguage(lan){
