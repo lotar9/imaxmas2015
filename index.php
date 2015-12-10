@@ -21,8 +21,8 @@
 		<script type="text/javascript" src="scripts/language.js" ></script>
 		<script type="text/javascript" src="scripts/main.js" ></script>
 		<script type="text/javascript">
-			var punctuation = parseInt("<?= $_POST['punctuation']?>");
-			var message_id = parseInt("<?= $_POST['message_id']?>");
+			var punctuation = parseInt("<?= isset( $_POST['punctuation'] ) ? $_POST['punctuation'] : 0; ?>");
+			var message_id = parseInt("<?= isset( $_POST['message_id'] ) ? $_POST['message_id'] : 0; ?>");
 		</script>
 	</head>
 	<body>
