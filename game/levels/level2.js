@@ -18,7 +18,7 @@ var shipHit = 0;
 var barrierGroup;
 var barrierPositionsX;
 var barrierSpeed = 150;
-var barrierDelay = 2000;
+var barrierDelay = 2500;
 var barrierPosition = 0;
 
 
