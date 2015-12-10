@@ -71,7 +71,7 @@
 
 		<section class="panel explanation" id="section2">
 			<div class="inner">
-				<h2><span id="rules">rules</span></h2>
+				<h2><span id="rules_carousel">rules</span></h2>
 				<div id="carousel-levels" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -141,7 +141,7 @@
 				<h2><span id="play">play</span></h2>
 					<div class="ratio-wrapper">
 						<div class="ratio-wrapper-content">
-							<a href="game.html" class="play" id="start">start</a>
+							<a href="game.html" class="play" id="start_game">start</a>
 						</div>
 					</div>
 				</div>
