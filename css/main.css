@@ -395,6 +395,9 @@ div.ratio-wrapper-content {
   text-decoration: none;
   background-color: #651127;
 }
+.item .play {
+  top: 350px;
+}
 .graphic {
   background-color: #13050a;
   box-shadow: 3px 3px 5px #000;
@@ -556,6 +559,9 @@ div.ratio-wrapper-content {
   div.inner {
     width: 90%;
   }
+  .item .play {
+    top: 240px;
+  }
 }
 
 @media (max-width:767px) {
@@ -564,6 +570,9 @@ div.ratio-wrapper-content {
   }
   .play {
     font-size: 2em;
+  }
+  .item .play {
+    top: 165px;
   }
   .carousel-caption {
   font-size: 1em;

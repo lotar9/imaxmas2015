@@ -72,7 +72,7 @@
 
 		<section class="panel explanation" scroll-panel="2">
 			<div class="inner">
-				<h2><span id="rules">rules</span></h2>
+				<h2><span id="rules_carousel">rules</span></h2>
 				<div id="carousel-levels" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -92,30 +92,31 @@
 							</div>
 						</div>
 						<div class="item">
-							<img src="img/city.png" alt="Ciudad">
+							<img src="img/carrusel_01-01.png" alt="Ciudad">
 							<div id="carousel-1" class="carousel-caption">
 								carousel-1
 							</div>
 						</div>
 						<div class="item">
-							<img src="img/sea.png" alt="Mar">
+							<img src="img/carrusel_02-01.png" alt="Mar">
 							<div id="carousel-2" class="carousel-caption">
 								carousel-2
 							</div>
 						</div>
 						<div class="item">
-							<img src="img/desert.png" alt="Desierto">
+							<img src="img/carrusel_03-01.png" alt="Desierto">
 							<div id="carousel-3" class="carousel-caption">
 								carousel-3
 							</div>
 						</div>
 						<div class="item">
-							<img src="img/village.png" alt="Selva">
+							<img src="img/carrusel_04-01.png" alt="Selva">
 							<div id="carousel-4" class="carousel-caption">
 								carousel-4
 							</div>
 						</div>
 						<div class="item">
+							<a href="game.html" class="play" id="start_carousel">start</a>
 							<img src="img/final.png" alt="Final">
 							<div id="carousel-5" class="carousel-caption">
 								carousel-5
@@ -141,7 +142,7 @@
 				<h2><span id="play">play</span></h2>
 					<div class="ratio-wrapper">
 						<div class="ratio-wrapper-content">
-							<a href="game.html" class="play" id="start">start<!-- <img class="play_button" src="game/sprites/shared/play_button.png"> --></a>
+							<a href="game.html" class="play" id="start_game">start</a>
 						</div>
 					</div>
 				</div>
@@ -156,7 +157,7 @@
 							<input type="hidden" name="id" id="message_id"/>
 							<input type="hidden" name="extra_kg" id="extra_kg"/>
 							<div class="col-xs-12 col-sm-6">
-								<h2><span id="title_section4">Thanks</span>  <!--<span class='punctuation'>0</span> <span id="title_section5">help</span> --></h2>
+								<h2><span id="title_section4">Thanks</span></h2>
 								<div class="row graphic">
 									<div class="col-xs-8">
 										<canvas id="myChart" width="200" height="150"></canvas>
@@ -200,7 +201,6 @@
 							<h2><span id="share">share</span></h2>
 							<div class="share_butt"><a href='' class='twitter-intent'><img class='sn-logo' src='img/ico_twitter_w.png' /></a></div>
 							<div class="share_butt"><a href='' class='facebook-intent'><img class='sn-logo' src='img/ico_facebook_w.png' /></a></div>
-							<!-- <div class="share_butt"><a href='messages.php' class='messages-panel'><img class='sn-logo' src='img/ico_email_w.png' /></a></div> -->
 							<br/><br/>
 							<div class="align-left dashedBott">Design by</div>
 							<div class="iw_logo"><a href="http://www.imaweb.net" title="IMAWEB" target="_blank"><img src="img/logo_imaweb-w.png"></a></div>
