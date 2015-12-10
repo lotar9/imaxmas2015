@@ -21,7 +21,7 @@
       var text = this.game.add.text(
           0,
           200,
-          this.getTrad('game.Level')+" "+level+": ",
+          this.getTrad('game.Level')+" #"+level+": ",
           { font: '36px Monospace', fill: '#FFF' }
       );
 
