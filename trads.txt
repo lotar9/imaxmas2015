@@ -104,7 +104,7 @@
 		"game.kgHelp" : " Kilos.",
 		"graphic.collected": "Kilos recolected",
 		"graphic.remaining": "Kilos left",
-		"cookieText": "Este sitio web utiliza cookies para mejorar la navegación en su web. Al continuar navegando en este Sitio Web, está aceptando su utilización en los términos establecidos en la Política de Cookies."
+		"cookieText": "Este sitio web utiliza cookies para mejorar la navegación en su web. Al continuar navegando en este Sitio Web, está aceptando su utilización en los términos establecidos en la Política de Cookies.",
 		"social_initial": "Juega con nosotros para hacer posible nuestra iniciativa de donar 3.000¤ a los niños de Praia Xai-Xai, Mozambique"
 	},
 	"PT":{
