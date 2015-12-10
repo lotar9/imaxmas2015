@@ -158,5 +158,5 @@ function clickMenu(id){
 function changeSocialLinks(newtext) {
 
 	$('.twitter-intent').attr('href','https://twitter.com/intent/tweet?text='+newtext+'&url=http://www.imaweb.net/xmas2015').attr('target','_blank');
-	$('.facebook-intent').attr('href','https://www.facebook.com/dialog/feed?app_id=&display=popup&caption='+newtext+'&link=http://www.imaweb.net/xmas2015&redirect_uri=http://www.imaweb.net/xmas2015').attr('target','_blank');
+	$('.facebook-intent').attr('href','https://www.facebook.com/dialog/feed?app_id=455026274699444&display=popup&caption='+newtext+'&link=http://www.imaweb.net/xmas2015&redirect_uri=http://www.imaweb.net/xmas2015').attr('target','_blank');
 }
