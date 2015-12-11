@@ -5,13 +5,21 @@
 {
     function World()
     {
-        this.width = Math.min( ( Math.round( window.screen.width * window.devicePixelRatio ) * 0.9 ), 1024 );
-        this.height = Math.round( ( this.width / 16 ) * 9 );
+        var w = Math.min( ( Math.round( window.screen.width * window.devicePixelRatio ) * 0.9 ), 1024 );
+        var h = Math.round( ( w / 16 ) * 9 );
+
+        if (h > (window.screen.height*window.devicePixelRatio)){
+            h = Math.round(window.screen.height * window.devicePixelRatio);
+            w = Math.round( (h* 16 ) / 9 );
+        }
+        this.height = h;
+        this.width = w;
+
         this.scaleCoef = this.width / 1024 / 2; // Retina
         this.totalScore = 0;
         window.trads = {};
         this.loadTrads();
-        this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO, "game_frame" );
+        this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO);
         this.finalScore = 0;
         this.messageId = 0;
 

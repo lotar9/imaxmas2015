@@ -21,7 +21,7 @@ section.panel {
   border-bottom: 1px solid #380e1d;
   padding-top: 70px;
   position: relative;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
 section.logo {
@@ -157,9 +157,8 @@ table.puntuaciones {
 }
 
 div.ratio-wrapper {
-  max-width: 1024;
   width: 100%;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: 50px; /* 16:9 */
 	position: relative;
 }
 
@@ -292,9 +291,12 @@ div.ratio-wrapper-content {
   width: 280px;
   margin-top: -7px;
 }
+.iw_top {
+  padding: 9px 0 0 0 !important;
+}
 .iw_top img{
   width: 40px;
-  padding: 11px 0 0 5px;
+  padding: 0;
   opacity: 0.8;
 }
 .flag {
@@ -315,10 +317,10 @@ div.ratio-wrapper-content {
   margin: 40px auto;
 }
 .welcome p{
-  font-size:20px;
-  font-weight:bold;
-  text-align:center;
-  text-transform:uppercase;
+  font-size:20px; 
+  font-weight:bold; 
+  text-align:center; 
+  text-transform:uppercase; 
   padding-top:20px;
 }
 .welcome2 {
@@ -481,7 +483,7 @@ div.ratio-wrapper-content {
   #cookiesms1:target {
   display: none;}
 
-  .cookiesms{
+  .cookiesms{ 
     width:100%;
     height:43px;
     margin:0 auto;
@@ -518,8 +520,8 @@ div.ratio-wrapper-content {
     display:inline;
     opacity:0.5;
     filter:alpha(opacity=50);
-    position:absolute;
-    left:1%;
+    position:absolute; 
+    left:1%; 
     top:-27px;
     font-size:12px;
     height:25px;
@@ -536,17 +538,16 @@ div.ratio-wrapper-content {
   }
   .button_cook {
     font-size:14px;
-    font-weight:;
     color: #fff;
     height: 30px;
     width: 120px;
-    background-color:#250813;
+    background-color:#250813; 
     border-radius: 3px;
       border:0px;
     /*box-shadow: 0px 3px 3px #000;
     -moz-box-shadow: 0px 3px 3px #000;
     -webkit-box-shadow: 0px 3px 3px #000;*/
-    zoom: 1;
+    zoom: 1; 
     filter: progid:DXImageTransform.Microsoft.Shadow(color='#333333', Direction=135, Strength=3); /* IE */
   }
   .button_cook:hover, .button_cook:focus, .button_cook:active {
@@ -606,8 +607,8 @@ div.ratio-wrapper-content {
   }
 }
 @media (max-width:480px) {
- .logo_top {
-   width: 215px;
-   margin-top: -4px;
- }
+  .logo_top {
+    width: 215px;
+    margin-top: -4px;
+  }
 }
