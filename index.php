@@ -168,7 +168,7 @@
 							</div>
 							<div class="col-xs-12 col-sm-6">
 								<h2><span id="leave_your_messasge">leave_your_messasge</span></h2>
-								<p id="info_message" class="align-left dashedBott">Déjenos un mensaje en nuestro muro.<p>
+								<p id="info_message" class="align-left dashedBott">Dejenos un mensaje en nuestro muro.<p>
 								<div class="form-group">
 								<label class="col-sm-2 control-label" id="name">name</label>
 								<div class="col-sm-10">
@@ -201,7 +201,7 @@
 							<div class="share_butt"><a href='' class='twitter-intent'><img class='sn-logo' src='img/ico_twitter_w.png' /></a></div>
 							<div class="share_butt"><a href='' class='facebook-intent'><img class='sn-logo' src='img/ico_facebook_w.png' /></a></div>
 							<br/><br/>
-							<div class="align-left dashedBott">Design by</div>
+							<div class="align-left dashedBott">Designed by</div>
 							<div class="iw_logo"><a href="http://www.imaweb.net" title="IMAWEB" target="_blank"><img src="img/logo_imaweb-w.png"></a></div>
 						</div>
 					</div>
